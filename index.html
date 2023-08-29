@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WSBD chat</title>
+        <link rel="stylesheet" href="./WSBD.css">
+    </head>
+    <body class="WSBD-body">
+        <header class="WSBD-header">
+            <img src="./img/20kg_plate_character-1.jpg" alt="WSBDchat-1">
+            <h1>WSBD chat</h1>
+        </header>
+
+        <main class="WSBD-main">
+            <!-- 각각 4개의 페이지를 만들 예정 따라서 article로 목록을 만들어주었다. -->
+            <article class="WSBD-index">
+                <h3>목록</h3>
+                <ol>
+                    <li>WSBD chat</li>
+                    <li>WSBD Storage</li>
+                    <li>FNC chat</li>
+                    <li>FNC Storage</li>
+                </ol>
+            </article>
+    
+            <div class="WSBD-chat">
+                <h2>당신의 운동을 계획해드립니다.</h2>
+                <form class="user-physical">
+                    <div class="gender">
+                        <span>성별을 선택해주세요.</span>
+                        <div>
+                            <input id="gender1" name="gender" type="radio">
+                            <label for="gender1">남성</label>
+                            <input id="gender2" name="gender" type="radio">
+                            <label for="gender2">여성</label>
+                        </div>
+                    </div>
+                    <div class="physical-input">
+                        <label for="user-height">키를 입력해주세요.</label>
+                        <div>
+                            <input id="user-height" type="number">
+                            <span>cm</span>
+                        </div>
+                    </div>
+    
+                    <div class="physical-input">
+                        <label for="user-weight">체중을 입력해주세요.</label>
+                        <div>
+                            <input id="user-weight" type="number">
+                            <span>kg</span>
+                        </div>
+                    </div>
+    
+                    <div class="physical-input">
+                        <label for="user-level">3대 운동 합산 중량을 입력해주세요.</label>
+                        <div>
+                            <input id="user-level" type="number">
+                            <span>kg</span>
+                        </div>
+                    </div>
+    
+                    <div class="workout-time">
+                        <!-- js로 select에 들어갈 옵션들 추가하기 -->
+                        <span>하루에 운동할 수 있는 시간이 어느정도인가요?</span>
+                        <div>
+                            <select id="work-out-time">
+                            </select>
+                            <label for="work-out-time">시간</label>
+                            <select id="work-out-minute">
+                            </select>
+                            <label for="work-out-minute">분</label>
+                        </div>
+                    </div>
+    
+                    <div class="workout-obj">
+                        <label>운동목적이 어떻게 되나요?</label>
+                        <select>
+                            <option>체중감량</option>
+                            <option>근력향상</option>
+                            <option>린매스업</option>
+                        </select>
+                    </div>
+                </form>
+                <button type="submit" class="generate-plan">운동 계획 생성 버튼</button>
+                <p>운동계획</p>
+                <textarea class="textarea"></textarea>
+        
+                <!-- <img src="./img/20kg_plate_character-2.jpg" alt="WSBDchat-2" style="width:200px"> -->
+            </div>
+        </main>
+
+
+    </body>
+</html>

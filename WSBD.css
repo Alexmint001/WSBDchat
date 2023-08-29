@@ -1,0 +1,101 @@
+/* .physical-input,
+.workout-time,
+.workout-obj,
+.gender,
+header,
+article,
+main {
+    border: 1px solid royalblue
+} */
+
+.WSBD-body {
+    width:1000px;
+    margin: auto;
+}
+
+.WSBD-index {
+    border-right: 2px solid #eee;
+}
+
+.WSBD-index h3 {
+    text-align: center;
+}
+
+.WSBD-index ol {
+    padding-right: 10px;
+}
+
+.WSBD-main {
+    display: flex;
+}
+
+.WSBD-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    border-bottom: 2px solid #eee
+}
+
+.WSBD-header img {
+    width: 55px;
+    height: 50px
+}
+
+.WSBD-chat {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+}
+
+.physical-input,
+.workout-time,
+.workout-obj,
+.gender {
+    display: flex;
+    justify-content: space-between;
+    margin:10px;
+}
+
+.physical-input span {
+    display: inline-block;
+    width: 40px;
+    text-align: right;
+}
+
+.workout-time label {
+    text-align: center;
+}
+
+.workout-time select {
+    width:50px;
+}
+
+.user-physical {
+    width:700px
+}
+
+.generate-plan {
+    background-color: rgb(85, 120, 223);
+    color: white;
+    width:200px;
+    height:50px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.textarea {
+    resize: none;
+    width: 700px;
+    height: 10rem;
+    overflow-y: hidden;
+    background-image: url('./img/20kg_plate_character-2.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    opacity: 0.2;
+    border-radius: 10px;
+}
+
