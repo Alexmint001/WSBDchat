@@ -1,32 +1,18 @@
-/* .physical-input,
+.physical-input,
 .workout-time,
 .workout-obj,
 .gender,
 header,
-article,
-main {
-    border: 1px solid royalblue
-} */
+main,
+.user-physical {
+    /* border: 1px solid royalblue; */
+    font-size: 12px;
+}
 
 .WSBD-body {
-    width:1000px;
+    /* width:1000px; */
     margin: auto;
-}
-
-.WSBD-index {
-    border-right: 2px solid #eee;
-}
-
-.WSBD-index h3 {
-    text-align: center;
-}
-
-.WSBD-index ol {
-    padding-right: 10px;
-}
-
-.WSBD-main {
-    display: flex;
+    background-color: #6e94b9;
 }
 
 .WSBD-header {
@@ -34,12 +20,20 @@ main {
     justify-content: center;
     align-items: center;
     gap:10px;
-    border-bottom: 2px solid #eee
+    background-color:#e0e0e0;
 }
 
 .WSBD-header img {
-    width: 55px;
+    width: 50px;
     height: 50px
+}
+
+.WSBD-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:600px;
+    margin: auto;
 }
 
 .WSBD-chat {
@@ -47,6 +41,15 @@ main {
     flex-direction: column;
     margin: auto;
     align-items: center;
+    /* border: 1px solid black; */
+    background-color: #e0e0e0;
+    width: 550px;
+    border-radius: 30px;
+    margin-top: 20px;
+}
+
+.user-physical {
+    width: 450px
 }
 
 .physical-input,
@@ -56,12 +59,34 @@ main {
     display: flex;
     justify-content: space-between;
     margin:10px;
+    flex-wrap: wrap;
+}
+
+.physical-input div {
+    display: flex;
+    justify-content: flex-end;
+    gap:10px
 }
 
 .physical-input span {
-    display: inline-block;
-    width: 40px;
-    text-align: right;
+    width:20px
+}
+
+.physical-input p {
+    font-size: 10px;
+    margin-bottom:0px
+}
+
+.gender,
+.physical-input input,
+.workout-time select,
+.workout-obj select {
+    border:0;
+    border-radius: 5px;
+}
+
+.physical-input input {
+    width: 120px;
 }
 
 .workout-time label {
@@ -72,30 +97,31 @@ main {
     width:50px;
 }
 
-.user-physical {
-    width:700px
-}
-
 .generate-plan {
     background-color: rgb(85, 120, 223);
     color: white;
-    width:200px;
+    width:300px;
     height:50px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     border-radius: 10px;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    margin-top:20px
 }
 
 .textarea {
-    resize: none;
-    width: 700px;
-    height: 10rem;
-    overflow-y: hidden;
-    background-image: url('./img/20kg_plate_character-2.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    opacity: 0.2;
+    width: 500px;
+    height: 150px;
+    overflow-y: auto;
+    border:1px solid white;
     border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: white;
 }
 
+.textarea p {
+    padding:10px
+}
