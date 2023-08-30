@@ -25,6 +25,10 @@ ESTsoft 오르미 3기 첫번째 프로젝트
        
        <img width="289" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/a12c5774-ee9d-4e25-98ae-355f9a0367eb">
 
+     목업 페이지 작성
+     
+     https://ovenapp.io/view/eQtb6yvmgYVt2tghNHczgSHTH5xVbsbE/tUQl4
+
    - 세부기획
      
      마크업: HTML
@@ -33,16 +37,16 @@ ESTsoft 오르미 3기 첫번째 프로젝트
      
      chatGPT api 연동: JavaScript
 
-2. 1차 구현 [23.08.31 ~ 23.09.04]
+3. 1차 구현 [23.08.31 ~ 23.09.04]
    - HTML
    - CSS
    - JavaScript
    - 피드백 [23.09.04]
 
-3. 최종 수정 [23.09.05 ~ 23.09.06]
+4. 최종 수정 [23.09.05 ~ 23.09.06]
    - 과제 제출 [23.09.06 자정까지]
    - 발표자료 작성 README
 
-4. 발표
+5. 발표
 
    
