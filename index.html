@@ -9,87 +9,112 @@
 
     </head>
     <body class="WSBD-body">
-        <header>
-            <a href="./index.html"  class="WSBD-header">
-                <img src="./img/20kg_plate_character-1.jpg" alt="WSBDchat-1">
-                <h1>WSBD chat</h1>
-            </a>
-        </header>
 
-        <main class="WSBD-main">    
-            <div class="WSBD-chat">
-                <h2>당신의 운동을 계획해드립니다.</h2>
-                <form class="user-physical">
-                    <div class="gender">
-                        <span>성별을 선택해주세요.</span>
-                        <div>
-                            <input id="gender1" name="gender" type="radio" value="male" onclick='getGender(event)'>
-                            <label for="gender1">남성</label>
-                            <input id="gender2" name="gender" type="radio" value="female" onclick='getGender(event)'>
-                            <label for="gender2">여성</label>
-                        </div>
+                <header>
+                    <div class="WSBD-header">
+                        <img src="./img/20kg_plate_character-1.jpg" alt="WSBDchat-1">
+                        <h1>WSBD chat</h1>
                     </div>
-                    <div class="physical-input">
-                        <label for="user-height">키를 입력해주세요.</label>
-                        <div>
-                            <input class="height" id="user-height" type="number">
-                            <span>cm</span>
-                        </div>
-                    </div>
-                    
-                    <div class="physical-input">
-                        <label for="user-weight">체중을 입력해주세요.</label>
-                        <div>
-                            <input class="weight" id="user-weight" type="number">
-                            <span>kg</span>
-                        </div>
-                    </div>
+                </header>
     
-                    <div class="physical-input">
-                        <label for="user-level">3대 운동 총 중량을 입력해주세요.</label>
-                        <div>
-                            <input class="level" id="user-level" type="number">
-                            <span>kg</span>
+                <div class="container">
+                    <div class="WSBD-main">    
+                        <div class="WSBD-chat">
+                            <h2>당신의 운동을 계획해드립니다.</h2>
+                            <form class="user-physical">
+                                <div class="gender">
+                                    <span>성별을 선택해주세요.</span>
+                                    <div>
+                                        <input id="gender1" name="gender" type="radio" value="male" onclick='getGender(event)'>
+                                        <label for="gender1">남성</label>
+                                        <input id="gender2" name="gender" type="radio" value="female" onclick='getGender(event)'>
+                                        <label for="gender2">여성</label>
+                                    </div>
+                                </div>
+                                <div class="physical-input">
+                                    <label for="user-height">키를 입력해주세요.</label>
+                                    <div>
+                                        <input class="height" id="user-height" type="number">
+                                        <span>cm</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="physical-input">
+                                    <label for="user-weight">체중을 입력해주세요.</label>
+                                    <div>
+                                        <input class="weight" id="user-weight" type="number">
+                                        <span>kg</span>
+                                    </div>
+                                </div>
+                
+                                <div class="physical-input">
+                                    <label for="user-level">3대 운동 총 중량을 입력해주세요.</label>
+                                    <div>
+                                        <input class="level" id="user-level" type="number">
+                                        <span>kg</span>
+                                    </div>
+                                    <p>※ 3대 운동이란 스쿼트, 벤치프레스, 데드리프트를 의미합니다.</p>
+                                </div>
+                                
+                                <div class="workout-obj">
+                                    <label>운동목적이 어떻게 되나요?</label>
+                                    <select id="workout-obj" onchange="ChangeValue()">
+                                        <option value="none" selected>===선택===</option>
+                                        <option value="체중감량">체중감량</option>
+                                        <option value="근력향상">근력향상</option>
+                                        <option value="린매스업">린매스업</option>
+                                    </select>
+                                </div>
+            
+                                <div class="workout-time">
+                                    <!-- js로 select에 들어갈 옵션들 추가하기 -->
+                                    <span>하루에 운동할 수 있는 시간이 어느정도인가요?</span>
+                                    <div>
+                                        <select id="work-out-time" onchange="ChangeHour()">
+                                        </select>
+                                        <label for="work-out-time">시간</label>
+                                        <select id="work-out-minute" onchange="ChangeMinute()">
+                                        </select>
+                                        <label for="work-out-minute">분</label>
+                                    </div>
+                                </div>
+                
+                            </form>
+                            <div class="ai-chat">
+                                <button type="submit" class="generate-plan">운동 계획 생성</button>
+                                <p>운동계획</p>
+                                <div class="textarea"></div>
+                            </div>
                         </div>
-                        <p>※ 3대 운동이란 스쿼트, 벤치프레스, 데드리프트를 의미합니다.</p>
-                    </div>
-                    
-                    <div class="workout-obj">
-                        <label>운동목적이 어떻게 되나요?</label>
-                        <select id="workout-obj" onchange="ChangeValue()">
-                            <option value="none" selected>===선택===</option>
-                            <option value="체중감량">체중감량</option>
-                            <option value="근력향상">근력향상</option>
-                            <option value="린매스업">린매스업</option>
-                        </select>
                     </div>
 
-                    <div class="workout-time">
-                        <!-- js로 select에 들어갈 옵션들 추가하기 -->
-                        <span>하루에 운동할 수 있는 시간이 어느정도인가요?</span>
-                        <div>
-                            <select id="work-out-time" onchange="ChangeHour()">
-                            </select>
-                            <label for="work-out-time">시간</label>
-                            <select id="work-out-minute" onchange="ChangeMinute()">
-                            </select>
-                            <label for="work-out-minute">분</label>
-                        </div>
+                    <div class="WSBD-main">
+                        <div class="ai-chat-expand"></div>
                     </div>
-    
-                </form>
-                <div class="ai-chat">
-                    <button type="submit" class="generate-plan">운동 계획 생성</button>
-                    <p>운동계획</p>
-                    <div class="textarea">
-                        <div id="app" class="next">더보기</div>
+                    <div class="WSBD-main">
+                        <div class="WSBD-chat"></div>
                     </div>
-                    
-        
-            </div>
-        </main>
+                </div>
 
+                <div class="page-style">
+                    <div class="page-button">
+                        <button class="button1">1</button>
+                        <button class="button2">2</button>
+                        <button class="button3">3</button>
+                    </div>
+                </div>
+                
     <script>
+
+        document.querySelector('.button1').addEventListener('click', function() {
+            document.querySelector('.container').style.transform = 'translateX(0vw)'
+        })
+        document.querySelector('.button2').addEventListener('click', function() {
+            document.querySelector('.container').style.transform = 'translateX(-100vw)'
+        })
+        document.querySelector('.button3').addEventListener('click', function() {
+            document.querySelector('.container').style.transform = 'translateX(-200vw)'
+        })
 
         for (hours=0;hours<25;hours+=1) {
             const hourParent = document.querySelector('#work-out-time')
@@ -141,6 +166,7 @@
 
         const $button = document.querySelector('button')
         const $answer = document.querySelector('.textarea')
+        const $answerExpand = document.querySelector('.ai-chat-expand')
         // 각각 입력값을 dom으로 활용한다는 명시적 표현으로 $변수명으로 변수 할당함. -> 다른 input은 그렇다치고 radio랑 select는 다시 봐야할 듯.
 
         const data = []
@@ -200,12 +226,11 @@
             .then(res => {
                 console.log(res)
                 $answer.innerHTML = `<p>${res.choices[0].message.content}</p>`
+                $answerExpand.innerHTML = $answer.innerHTML
             })
             
             spinnerWrapper.remove()
         }
-
-
     </script>
 
     </body>
