@@ -21,6 +21,8 @@ main,
     align-items: center;
     gap:10px;
     background-color:#e0e0e0;
+    text-decoration: none;
+    color:black
 }
 
 .WSBD-header img {
@@ -97,6 +99,12 @@ main,
     width:50px;
 }
 
+.ai-chat p {
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
 .generate-plan {
     background-color: rgb(85, 120, 223);
     color: white;
@@ -112,10 +120,16 @@ main,
     margin-top:20px
 }
 
+.generate-plan:hover {
+    cursor: pointer;
+    background-color: #6e94b9;
+    transition: background-color 0.3s ease
+}
+
 .textarea {
     width: 500px;
     height: 150px;
-    overflow-y: auto;
+    overflow-y:auto;
     border:1px solid white;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -123,5 +137,34 @@ main,
 }
 
 .textarea p {
-    padding:10px
+    padding:10px;
+    overflow-y: auto;
+}
+
+#wrapper {
+    width: 500px;
+    height: 150px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg);}
+}
+
+#spinner {
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    border: 10px solid rgba(163,151,198,0.2);
+    border-top: 10px solid rgb(85,120,223);
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+.textarea-expand {
+    width:800px;
+    height: 1000px;
 }

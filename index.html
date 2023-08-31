@@ -6,11 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>WSBD chat</title>
         <link rel="stylesheet" href="./WSBD.css">
+
     </head>
     <body class="WSBD-body">
-        <header class="WSBD-header">
-            <img src="./img/20kg_plate_character-1.jpg" alt="WSBDchat-1">
-            <h1>WSBD chat</h1>
+        <header>
+            <a href="./index.html"  class="WSBD-header">
+                <img src="./img/20kg_plate_character-1.jpg" alt="WSBDchat-1">
+                <h1>WSBD chat</h1>
+            </a>
         </header>
 
         <main class="WSBD-main">    
@@ -54,6 +57,7 @@
                     <div class="workout-obj">
                         <label>운동목적이 어떻게 되나요?</label>
                         <select id="workout-obj" onchange="ChangeValue()">
+                            <option value="none" selected>===선택===</option>
                             <option value="체중감량">체중감량</option>
                             <option value="근력향상">근력향상</option>
                             <option value="린매스업">린매스업</option>
@@ -64,10 +68,10 @@
                         <!-- js로 select에 들어갈 옵션들 추가하기 -->
                         <span>하루에 운동할 수 있는 시간이 어느정도인가요?</span>
                         <div>
-                            <select id="work-out-time">
+                            <select id="work-out-time" onchange="ChangeHour()">
                             </select>
                             <label for="work-out-time">시간</label>
-                            <select id="work-out-minute">
+                            <select id="work-out-minute" onchange="ChangeMinute()">
                             </select>
                             <label for="work-out-minute">분</label>
                         </div>
@@ -77,14 +81,31 @@
                 <div class="ai-chat">
                     <button type="submit" class="generate-plan">운동 계획 생성</button>
                     <p>운동계획</p>
-                    <div class="textarea"></div>
-                </div>
+                    <div class="textarea">
+                        <div id="app" class="next">더보기</div>
+                    </div>
+                    
         
-                <!-- <img src="./img/20kg_plate_character-2.jpg" alt="WSBDchat-2" style="width:200px"> -->
             </div>
         </main>
 
     <script>
+
+        for (hours=0;hours<25;hours+=1) {
+            const hourParent = document.querySelector('#work-out-time')
+            const createHourOption = document.createElement('option')
+            const createHour = hourParent.appendChild(createHourOption)
+            createHour.value = hours
+            createHour.text = hours
+        }
+        for (minutes=0;minutes<61;minutes+=5) {
+            const minuteParent = document.querySelector('#work-out-minute')
+            const createMinuteOption = document.createElement('option')
+            const createMinute = minuteParent.appendChild(createMinuteOption)
+            createMinute.value = minutes
+            createMinute.text = minutes
+        }
+        // 운동할 수 있는 시간 Option 추가하는 for반복문 작성
 
         let $gender = ''    
         function getGender(event) {
@@ -95,8 +116,28 @@
         const $height = document.querySelector('.height')
         const $weight = document.querySelector('.weight')
         const $level = document.querySelector('.level')
+        let $object = ''
+        let $hour = ''
+        let $minute = ''
         // const $object = document.querySelector('.workout-obj select')
         // const $time = document.querySelector('.workout-time')
+
+        function ChangeValue() {
+            let value_obj = document.getElementById('workout-obj');
+            $object = value_obj.options[value_obj.selectedIndex].value
+        }
+
+        function ChangeHour() {
+            let value_hour = document.getElementById('work-out-time');
+            // console.log(value_hour.options[value_hour.selectedIndex].value)
+            $hour = value_hour.options[value_hour.selectedIndex].value
+        }
+        
+        function ChangeMinute() {
+            let value_minute = document.getElementById('work-out-minute');
+            // console.log(value_minute.options[value_minute.selectedIndex].value)
+            $minute = value_minute.options[value_minute.selectedIndex].value
+        }
 
         const $button = document.querySelector('button')
         const $answer = document.querySelector('.textarea')
@@ -113,24 +154,41 @@
         const url = "https://estsoft-openai-api.jejucodingcamp.workers.dev/"
         // chatGPT API를 url 변수에 할당
 
+        let spinnerDupl = 0 // spinner 중복 방지를 위한 변수 설정
         $button.addEventListener('click', e=>{
             e.preventDefault() // 클릭했을 때 이벤트 발생 강제로 막기
-            // const contents1 = $gender.value
-            const contents = `저의 성별은 ${$gender}입니다. 저의 키는 ${$height.value}cm 입니다. 저의 체중은 ${$weight.value}kg 입니다. 저의 벤치프레스, 스쿼트, 데드리프트의 합산 무게는 ${$level.value}kg 입니다. 저의 일주일 운동 루틴을 만들어주세요.`
-            // const contents3 = `저의 체중은 ${$weight.value}kg 입니다.`
-            // const contents4 = `저의 벤치프레스, 스쿼트, 데드리프트의 합산 무게는 ${$level.value}kg 입니다.`
-            // const contents5 = $object.value
-            // const contents6 = $time.value
-            
+            // const contents = `저의 성별은 ${$gender}입니다. 저의 키는 ${$height.value}cm 입니다. 저의 체중은 ${$weight.value}kg 입니다. 저의 벤치프레스, 스쿼트, 데드리프트의 합산 무게는 ${$level.value}kg 입니다. 저의 일주일 운동 루틴을 만들어주세요.`
+            const genderContent = `저의 성별은 ${$gender}입니다.`
+            const heightContent = `저의 키는 ${$height.value}cm 입니다.`
+            const weightContent = `저의 체중은 ${$weight.value}kg 입니다.`
+            const levelContent = `저의 벤치프레스, 스쿼트, 데드리프트의 합산 무게는 ${$level.value}kg 입니다.`
+            const objectContent = `저의 운동 목표는 ${$object}입니다.`
+            const timeContent = `저는 하루에 운동을 ${$hour}시간 ${$minute}분 할 수 있습니다.`
+            const requestContent = `저의 일주일 운동루틴을 요일별로 하루에 5가지 운동, 세트 수, 횟수를 계획해주세요.` //를 JSON데이터로만 만들어주세요`
             data.push({
                 'role':'user',
-                'content':contents,
-            }) // data 라는 배열에 입력된 값들을 추가한다.
+                'content' : genderContent+heightContent+weightContent+levelContent+objectContent+timeContent+requestContent
 
-            chatGPTAPI()
+            }) // data 라는 배열에 입력된 값들을 추가한다.
+            
+            if (spinnerDupl == 0) {
+                spinnerDupl+=1
+                const spinnerParent = document.querySelector('.textarea') // textarea라는 클래스를 가진 객체를 spinnerParent변수에 할당
+                const spinnerWrapper = document.createElement('div')
+                const spinnerElement = document.createElement('div') // div태그를 생성하는 요소를 spinnerElement 변수에 할당함
+                
+                const spinnerSelectWrapper = spinnerParent.appendChild(spinnerWrapper) // spinnerParent의 자식요소에 spinnerWrapper 를 생성한다.
+                const spinnerSelectElement = spinnerWrapper.appendChild(spinnerElement) // spinnerWrapper의 자식요소로 spinnerElement를 생성한다.
+                
+                spinnerSelectWrapper.id = 'wrapper'
+                spinnerSelectElement.id = 'spinner'
+
+                chatGPTAPI()
+            }
         })
 
         function chatGPTAPI() {
+
             fetch(url, {
                 method: 'POST',
                 headers: {'Content-Type' : 'application/json'
@@ -143,6 +201,8 @@
                 console.log(res)
                 $answer.innerHTML = `<p>${res.choices[0].message.content}</p>`
             })
+            
+            spinnerWrapper.remove()
         }
 
 
