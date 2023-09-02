@@ -1,11 +1,4 @@
-.physical-input,
-.workout-time,
-.workout-obj,
-.gender,
-header,
-main,
-.user-physical {
-    /* border: 1px solid royalblue; */
+.container * {
     font-size: 12px;
 }
 
@@ -144,12 +137,14 @@ main,
 
 .textarea {
     width: 500px;
-    height: 150px;
+    height: 195px;
     overflow-y:auto;
     border:1px solid white;
-    border-radius: 10px;
+    /* border-radius: 15px; */
     margin-bottom: 20px;
     background-color: white;
+    transition: 1s;
+    transform-origin: bottom;
 }
 
 .textarea p {
