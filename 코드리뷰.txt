@@ -1,0 +1,15 @@
+성별은 default
+키는 100~200
+체중이 30~200
+운동목적
+
+보낼 값들 검사하고 보내는게 좋음
+
+button disable 버튼 속성을 disable 할 수 있는지?
+enable false
+
+ e.prevent(default)
+이것 떄문에 버튼 누르고 나서 다시 안눌리는 듯 
+GPT 데이터 받고나서 다시 풀어주는 방식으로 바꾸면 좋을듯.
+
+

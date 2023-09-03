@@ -25,7 +25,7 @@
                                 <div class="gender">
                                     <span>성별을 선택해주세요.</span>
                                     <div>
-                                        <input id="gender1" name="gender" type="radio" value="male" onclick='getGender(event)'>
+                                        <input id="gender1" name="gender" type="radio" value="male" onclick='getGender(event)' checked="checked">
                                         <label for="gender1">남성</label>
                                         <input id="gender2" name="gender" type="radio" value="female" onclick='getGender(event)'>
                                         <label for="gender2">여성</label>
@@ -68,7 +68,6 @@
                                 <div class="workout-obj">
                                     <label>운동목적이 어떻게 되나요?</label>
                                     <select id="workout-obj" onchange="ChangeValue()">
-                                        <option value="none" selected>===선택===</option>
                                         <option value="체중감량">체중감량</option>
                                         <option value="근력향상">근력향상</option>
                                         <option value="린매스업">린매스업</option>
@@ -97,21 +96,27 @@
                             <div class="ai-chat">
                                 <button type="submit" class="generate-plan">운동 계획 생성</button>
                                 <p>운동계획</p>
-                                <div class="textarea"></div>
-                                <button class="expandpage">더보기</button>
+                                <div class="textarea" id="tableContainer"></div>
+                                <div class="expandpage"><img src="./img/expand.png"></img></div>
                             </div>
 
                         </div>
                     </div>
 
                     <div class="WSBD-main">
-                        <div class="ai-chat-expand"></div>
-                    </div>
-
-
-
-                    <div class="WSBD-main">
-                        <div class="WSBD-chat"></div>
+                        <div class="plan-storage">
+                            <table class="plan-table">
+                                <tr>
+                                    <th>No.</th>
+                                    <th>성별</th>
+                                    <th>키</th>
+                                    <th>체중</th>
+                                    <th>운동능력</th>
+                                    <th>운동목적</th>
+                                    <th>운동계획</th>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -119,38 +124,40 @@
 
                 <div class="page-style">
                     <div class="page-button">
-                        <button class="button1">1</button>
-                        <button class="button2">2</button>
-                        <button class="button3">3</button>
+                        <button class="prev-btn">prev</button>
+                        <button class="next-btn">next</button>
                     </div>
                 </div>
                 
     <script>
-// 페이지 별로 넘어가는 버튼 작성
-        document.querySelector('.button1').addEventListener('click', function() {
-            document.querySelector('.container').style.transform = 'translateX(0vw)'
+        
+        const $container = document.querySelector('.container')
+        const $prevBtn = document.querySelector('.prev-btn')
+        const $nextBtn = document.querySelector('.next-btn')
+        
+        $prevBtn.addEventListener('click', function() {
+            $container.style.transform = 'translateX(0vw)'
         })
-        document.querySelector('.button2').addEventListener('click', function() {
-            document.querySelector('.container').style.transform = 'translateX(-100vw)'
-        })
-        document.querySelector('.button3').addEventListener('click', function() {
-            document.querySelector('.container').style.transform = 'translateX(-200vw)'
+        $nextBtn.addEventListener('click', function() {
+            $container.style.transform = 'translateX(-100vw)';
+            $answer.style = 'height:195px; transition:0.1s';
+            $expandPageBtn.style.transform= 'rotatex(0deg)';
         })
 
 // 운동 시간 데이터 일일히 입력하기 귀찮아서 for문으로 작성함.
-        for (hours=0;hours<25;hours+=1) {
-            const hourParent = document.querySelector('#work-out-hour')
-            const createHourOption = document.createElement('option')
-            const createHour = hourParent.appendChild(createHourOption)
-            createHour.value = hours
-            createHour.text = hours
+        for (hours=0;hours<11;hours+=1) {
+            const hourParent = document.querySelector('#work-out-hour');
+            const createHourOption = document.createElement('option');
+            const createHour = hourParent.appendChild(createHourOption);
+            createHour.value = hours;
+            createHour.text = hours;
         }
-        for (minutes=0;minutes<61;minutes+=5) {
-            const minuteParent = document.querySelector('#work-out-minute')
-            const createMinuteOption = document.createElement('option')
-            const createMinute = minuteParent.appendChild(createMinuteOption)
-            createMinute.value = minutes
-            createMinute.text = minutes
+        for (minutes=0;minutes<60;minutes+=5) {
+            const minuteParent = document.querySelector('#work-out-minute');
+            const createMinuteOption = document.createElement('option');
+            const createMinute = minuteParent.appendChild(createMinuteOption);
+            createMinute.value = minutes;
+            createMinute.text = minutes;
         }
 
 // 성별이 선택됨에 따라 그 값을 $gender에 할당한다. event.target은 이벤트가 발생한 대상을 뜻한다.
@@ -158,32 +165,32 @@
         function getGender(event) {
             $gender = event.target.value;
         }
-
-        const $height = document.querySelector('.height')
-        const $weight = document.querySelector('.weight')
-        const $level = document.querySelector('.level')
-        let $object = ''
-        let $hour = ''
-        let $minute = ''
+        
+        const $height = document.querySelector('.height');
+        const $weight = document.querySelector('.weight');
+        const $level = document.querySelector('.level');
+        let $object = '';
+        let $hour = '';
+        let $minute = '';
 
         function ChangeValue() {
             let value_obj = document.getElementById('workout-obj');
-            $object = value_obj.options[value_obj.selectedIndex].value
+            $object = value_obj.options[value_obj.selectedIndex].value;
         }
 
         function ChangeHour() {
             let value_hour = document.getElementById('work-out-hour');
-            $hour = value_hour.options[value_hour.selectedIndex].value
+            $hour = value_hour.options[value_hour.selectedIndex].value;
         }
         
         function ChangeMinute() {
             let value_minute = document.getElementById('work-out-minute');
-            $minute = value_minute.options[value_minute.selectedIndex].value
+            $minute = value_minute.options[value_minute.selectedIndex].value;
         }
 
-        const $button = document.querySelector('button')
-        const $answer = document.querySelector('.textarea')
-        const $answerExpand = document.querySelector('.ai-chat-expand')
+        const $button = document.querySelector('button');
+        const $answer = document.querySelector('.textarea');
+        const $answerExpand = document.querySelector('.ai-chat-expand');
 
         const data = []
         data.push({
@@ -192,43 +199,42 @@
         })
         // data라는 배열에 역할 부여하는 객체를 추가한다.
 
+
         const url = "https://estsoft-openai-api.jejucodingcamp.workers.dev/"
         // chatGPT API를 url 변수에 할당
 
         let spinnerDupl = 0 // spinner 중복 방지를 위한 변수 설정
         $button.addEventListener('click', e=>{
             e.preventDefault() // 클릭했을 때 이벤트 발생 강제로 막기
-            // const contents = `저의 성별은 ${$gender}입니다. 저의 키는 ${$height.value}cm 입니다. 저의 체중은 ${$weight.value}kg 입니다. 저의 벤치프레스, 스쿼트, 데드리프트의 합산 무게는 ${$level.value}kg 입니다. 저의 일주일 운동 루틴을 만들어주세요.`
             const genderContent = `저의 성별은 ${$gender}입니다.`
             const heightContent = `저의 키는 ${$height.value}cm 입니다.`
             const weightContent = `저의 체중은 ${$weight.value}kg 입니다.`
             const levelContent = `저의 벤치프레스, 스쿼트, 데드리프트의 합산 무게는 ${$level.value}kg 입니다.`
             const objectContent = `저의 운동 목표는 ${$object}입니다.`
             const timeContent = `저는 하루에 운동을 ${$hour}시간 ${$minute}분 할 수 있습니다.`
-            const requestContent = `저의 일주일 운동루틴을 요일별로 하루에 5가지 운동, 세트 수, 횟수를 계획해주세요.` //를 JSON데이터로만 만들어주세요`
-            const contentDataType = `계획한 운동 루틴은 {day: 요일, exercise:운동 이름, sets: 세트 수, reps: 횟수} JSON형식으로 출력해줘. 설명은 생략해줬으면 좋겠고, key 값은 내가 지정해준 것만 사용해야돼.`
+            const requestContent = `월요일부터 일요일까지 요일별로 하루에 운동 5가지를 하는 것으로 추천해줘. JSON 형식으로`
+            const contentDataType = {"월요일": [{ "exercise": "스쿼트", "sets": 3, "reps": 10 },{ "exercise": "벤치프레스", "sets": 3, "reps": 8 }]};
 
             data.push({
                 'role':'user',
-                'content' : genderContent+heightContent+weightContent+levelContent+objectContent+timeContent+requestContent+contentDataType
+                'content' : genderContent+heightContent+weightContent+levelContent+objectContent+timeContent+requestContent+JSON.stringify(contentDataType)
 
             }) // data 라는 배열에 입력된 값들을 추가한다.
             
             if (spinnerDupl == 0) {
                 spinnerDupl+=1
-                const spinnerParent = document.querySelector('.textarea') // textarea라는 클래스를 가진 객체를 spinnerParent변수에 할당
-                const spinnerWrapper = document.createElement('div')
-                const spinnerElement = document.createElement('div') // div태그를 생성하는 요소를 spinnerElement 변수에 할당함
+                const spinnerParent = document.querySelector('.textarea'); // textarea라는 클래스를 가진 객체를 spinnerParent변수에 할당
+                const spinnerWrapper = document.createElement('div');
+                const spinnerElement = document.createElement('div'); // div태그를 생성하는 요소를 spinnerElement 변수에 할당함
                 
-                const spinnerSelectWrapper = spinnerParent.appendChild(spinnerWrapper) // spinnerParent의 자식요소에 spinnerWrapper 를 생성한다.
-                const spinnerSelectElement = spinnerWrapper.appendChild(spinnerElement) // spinnerWrapper의 자식요소로 spinnerElement를 생성한다.
+                const spinnerSelectWrapper = spinnerParent.appendChild(spinnerWrapper); // spinnerParent의 자식요소에 spinnerWrapper 를 생성한다.
+                const spinnerSelectElement = spinnerWrapper.appendChild(spinnerElement); // spinnerWrapper의 자식요소로 spinnerElement를 생성한다.
                 
-                spinnerSelectWrapper.id = 'wrapper'
-                spinnerSelectElement.id = 'spinner'
+                spinnerSelectWrapper.id = 'wrapper';
+                spinnerSelectElement.id = 'spinner';
 
                 chatGPTAPI()
             }
-
         })
 
         function chatGPTAPI() {
@@ -242,28 +248,95 @@
             })
             .then(res => res.json())
             .then(res => {
-                console.log(res)
-                $answer.innerHTML = `<p>${res.choices[0].message.content}</p>`
-                $answerExpand.innerHTML = $answer.innerHTML
+                console.log(res);
+                // $answer.innerHTML = `<p>${res.choices[0].message.content}</p>`;
+                // $answerExpand.innerHTML = $answer.innerHTML;
+                const data = JSON.parse(res.choices[0].message.content)
+                console.log(data)
+                const strdata = JSON.stringify(data)
+                localStorage.setItem('myData', data);
+                // ExercisePlan 클래스 정의
+                class ExercisePlan {
+                    constructor(exercise, sets, reps) {
+                        this.exercise = exercise;
+                        this.sets = sets;
+                        this.reps = reps;
+                    }
+                }
+
+                // 요일별로 운동 계획 생성 및 모델 인스턴스 생성
+                let exercisePlans = {};
+                for (let day in data) {
+                    if (data.hasOwnProperty(day)) {
+                        let exercises = data[day];
+                        
+                        let planList = [];
+                        
+                        for (let i = 0; i < exercises.length; i++) {
+                            let exerciseData = exercises[i];
+                            
+                            let exerciseName = exerciseData.exercise || "-";
+                            let setsCount = exerciseData.sets || "-";
+                            let repsCount = exerciseData.reps || "-";
+                            
+                            let plan= new ExercisePlan(exerciseName,setsCount,repsCount);
+                            
+                            planList.push(plan);
+                        }
+                        
+                        exercisePlans[day] = planList;
+                    }
+                }
+
+                let tableHTML = "<table><tr><th>Day</th><th>Exercise</th><th>Sets</th><th>Reps</th></tr>";
+
+                // 요일별로 반복하며 표에 추가
+                for (let day in exercisePlans) {
+                    if (exercisePlans.hasOwnProperty(day)) {
+                        let plans = exercisePlans[day];
+                        
+                        for (let i = 0; i < plans.length; i++) {
+                            let plan= plans[i];
+                            
+                            let exerciseName= plan.exercise;
+                            let setsCount= plan.sets;
+                            let repsCount=plan.reps;
+                            
+                            tableHTML += "<tr><td>" + day + "</td><td>" + exerciseName + "</td><td>" + setsCount + "</td><td>" + repsCount+ "</td></tr>";
+                        }
+                    }
+                }
+
+                // 테이블 마무리 태그 추가
+                tableHTML += "</table>";
+
+                document.getElementById("tableContainer").innerHTML=tableHTML;
             })
             
             spinnerWrapper.remove()
         }
 
-        const $expandPageBtn = document.querySelector('.expandpage')
-        let changeSizenum = 0
+        const $expandPageBtn = document.querySelector('.expandpage');
+        let changeSizenum = 0;
         $expandPageBtn.addEventListener('click',function(){
-            // $answer.style = 'height:400px'
-            $answer.style.transform='scaley(2)'
-
-            changeSizenum+=1 
+            $answer.style = 'height:450px';
+            $expandPageBtn.style.transform= 'rotatex(180deg)';
+            changeSizenum+=1 ;
             if (changeSizenum%2==1) {
-                // $answer.style = 'height:195px'
-                $answer.style.transform='scale(1)'
+                $answer.style = 'height:195px';
+                $expandPageBtn.style.transform= 'rotatex(0deg)';
             } 
         })
 
-    </script>
+        for (let i = 1; i < 23; i++) {
+            const createTable = `<tr><td>${i}</td><td class="table-gender"></td><td class="table-height"></td><td class = "table-weight"></td><td class = "table=level"></td><td class="table=obj"></td><td class = "table-plan"></td></tr>`;
+            const planTable = document.querySelector('.plan-table');
+            planTable.innerHTML += createTable;
+        }
 
+    </script>
+    <footer>
+        <a href="https://www.flaticon.com/free-icons/drop-down-list" title="drop down list icons">Drop down list icons created by Anas Mannaa - Flaticon</a>
+    </footer>
     </body>
 </html>
