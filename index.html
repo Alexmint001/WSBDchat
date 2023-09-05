@@ -37,7 +37,7 @@
                                 <div class="physical-input">
                                     <label for="user-height">키를 입력해주세요.</label>
                                     <div>
-                                        <input class="height" id="user-height" type="number">
+                                        <input class="height" id="user-height" type="number" min="130" max="200" required>
                                         <span>cm</span>
                                     </div>
                                 </div>
@@ -47,7 +47,7 @@
                                 <div class="physical-input">
                                     <label for="user-weight">체중을 입력해주세요.</label>
                                     <div>
-                                        <input class="weight" id="user-weight" type="number">
+                                        <input class="weight" id="user-weight" type="number" min="40" max="120" required>
                                         <span>kg</span>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@
                                 <div class="physical-input">
                                     <label for="user-level">3대 운동 총 중량을 입력해주세요.</label>
                                     <div>
-                                        <input class="level" id="user-level" type="number">
+                                        <input class="level" id="user-level" type="number" min="0" max="600" required>
                                         <span>kg</span>
                                     </div>
                                     <p>※ 3대 운동이란 스쿼트, 벤치프레스, 데드리프트를 의미합니다.</p>
@@ -68,7 +68,7 @@
                                 <div class="workout-obj">
                                     <label>운동목적이 어떻게 되나요?</label>
                                     <select id="workout-obj">
-                                        <option value="선택안함">선택안함</option>
+                                        <option>선택안함</option>
                                         <option value="체중감량">체중감량</option>
                                         <option value="근력향상">근력향상</option>
                                         <option value="린매스업">린매스업</option>
@@ -81,28 +81,25 @@
                                     <span>하루에 운동할 수 있는 시간이 어느정도인가요?</span>
                                     <div>
                                         <select id="work-out-hour" onchange="ChangeHour()">
-                                            <option>-</option>
+                                            <option></option>
                                         </select>
                                         <label for="work-out-hour">시간</label>
 
                                         <select id="work-out-minute" onchange="ChangeMinute()">
-                                            <option>-</option>
+                                            <option></option>
                                         </select>
                                         <label for="work-out-minute">분</label>
                                     </div>
                                 </div>
-                
-                            </form>
-
-
-
-                            <div class="ai-chat">
                                 <button type="submit" class="generate-plan">운동 계획 생성</button>
+                            </form>
+                            
+                            <div class="ai-chat">
                                 <p>운동계획</p>
                                 <div class="textarea" id="tableContainer"></div>
                                 <div class="expandpage"><img src="./img/expand.png"></img></div>
                             </div>
-
+                            
                         </div>
                     </div>
 
@@ -124,8 +121,6 @@
                     </div>
                 </div>
 
-                
-
                 <div class="page-style">
                     <div class="page-button">
                         <button class="prev-btn">prev</button>
@@ -133,60 +128,96 @@
                     </div>
                 </div>
             
-                
                 <div id="modal">
                     <div class="modal-content">
-                        <h2>운동계획</h2>
+                        <div class = "modal-header">
+                            <h2>운동계획</h2>
+                            <div id="close-modal"><img src="./img/close.png" alt="closeBtn"></img></div>
+                        </div>
                         <div id="create-exercise-plan"></div>
-                        <button id="close-modal">닫기</button>
                     </div>
                 </div>
+                
     <script>
-        
 
         // 로컬저장소 불러오기
-        const localgender = JSON.parse(localStorage.getItem('gender')) || []
-        const localheight = JSON.parse(localStorage.getItem('height')) || []
-        const localweight = JSON.parse(localStorage.getItem('weight')) || []
-        const locallevel = JSON.parse(localStorage.getItem('level')) || []
-        const localobject = JSON.parse(localStorage.getItem('object')) || []
-        const localexerciseplan = JSON.parse(localStorage.getItem('exercisePlan')) || []
+        const localgender = JSON.parse(localStorage.getItem('gender')) || [];
+        const localheight = JSON.parse(localStorage.getItem('height')) || [];
+        const localweight = JSON.parse(localStorage.getItem('weight')) || [];
+        const locallevel = JSON.parse(localStorage.getItem('level')) || [];
+        const localobject = JSON.parse(localStorage.getItem('object')) || [];
+        const localexerciseplan = JSON.parse(localStorage.getItem('exercisePlan')) || [];
         
         // 로컬저장소 업데이트
         function addUserInput() {
-            localgender.push($gender)
-            localheight.push($height.value)
-            localweight.push($weight.value)
-            locallevel.push($level.value)
-            localobject.push($object)
+            localgender.push($gender);
+            localheight.push($height.value);
+            localweight.push($weight.value);
+            locallevel.push($level.value);
+            localobject.push($object);
 
-            localStorage.setItem('gender',JSON.stringify(localgender))
-            localStorage.setItem('height',JSON.stringify(localheight))
-            localStorage.setItem('weight',JSON.stringify(localweight))
-            localStorage.setItem('level',JSON.stringify(locallevel))
-            localStorage.setItem('object',JSON.stringify(localobject))
+            localStorage.setItem('gender',JSON.stringify(localgender));
+            localStorage.setItem('height',JSON.stringify(localheight));
+            localStorage.setItem('weight',JSON.stringify(localweight));
+            localStorage.setItem('level',JSON.stringify(locallevel));
+            localStorage.setItem('object',JSON.stringify(localobject));
         }
         
-        // let tableGender=''
-        // for (i=0;i<localgender.length;i++) {
-        //     tableGender = document.getElementById(`table-gender${i}`);
-        //     tableGender.innerHTML = localgender[i];
-        
-        // }
-
-
-
-        const $container = document.querySelector('.container')
-        const $prevBtn = document.querySelector('.prev-btn')
-        const $nextBtn = document.querySelector('.next-btn')
+        const $container = document.querySelector('.container');
+        const $prevBtn = document.querySelector('.prev-btn');
+        const $nextBtn = document.querySelector('.next-btn');
         
         $prevBtn.addEventListener('click', function() {
-            $container.style.transform = 'translateX(0vw)'
+            $container.style.transform = 'translateX(0vw)';
+            $prevBtn.style.display = "none";
+            $nextBtn.style.display = "block";
+            const $planStorage = document.querySelector(".plan-storage")
+            const firstTable = `<table class="plan-table"><tr><th>No.</th><th>성별</th><th>키</th><th>체중</th><th>운동능력</th><th>운동목적</th><th>운동계획</th></tr></table>`
+            const planTable = document.querySelector('.plan-table');
+            planTable.remove()
+            $planStorage.innerHTML += firstTable
         })
+
+        let clickBtn = 0
         $nextBtn.addEventListener('click', function() {
             $container.style.transform = 'translateX(-100vw)';
             $answer.style = 'height:195px; transition:0.1s';
             $expandPageBtn.style.transform= 'rotatex(0deg)';
+            $prevBtn.style.display = "block";
+            $nextBtn.style.display = "none";
+
+            for (let i = 0; i < 23; i++) {
+                const genderValue = localgender[i] || ""; // 값이 없을 경우 공백으로 설정
+                const heightValue = localheight[i] || "";
+                const weightValue = localweight[i] || "";
+                const levelValue = locallevel[i] || "";
+                const objectValue = localobject[i] || "";
+
+                if (localexerciseplan[i]){
+                const createTable = `<tr id="table-element"><td>${i+1}</td><td id="table-gender${i}">${genderValue}</td><td id="table-height${i}">${heightValue}</td><td id="table-weight${i}">${weightValue}</td><td id="table-level${i}">${levelValue}</td><td id="table-object${i}">${objectValue}</td><td><button id="open-modal${i}">열기</button></td></tr>`;
+                const planTable = document.querySelector('.plan-table');
+                planTable.innerHTML += createTable;
+                } else {
+                    const createTable = `<tr id="table-element"><td>${i+1}</td><td id="table-gender${i}">${genderValue}</td><td id="table-height${i}">${heightValue}</td><td id="table-weight${i}">${weightValue}</td><td id="table-level${i}">${levelValue}</td><td id="table-object${i}">${objectValue}</td><td></td></tr>`;
+                    const planTable = document.querySelector('.plan-table');
+                    planTable.innerHTML += createTable;
+                }
+            }     
+            // 모달창 열기
+            for (let i = 0; i < 23; i++) {
+                let openModalBtn = document.getElementById(`open-modal${i}`);
+                openModalBtn.addEventListener("click", () => {
+                    modal.style.display = "block";
+                    document.body.style.overflow = "hidden"; // 스크롤바 제거
+                    createExerciseModal.innerHTML = localexerciseplan[i]
+                });
+            // 모달창 닫기
+                closeModalBtn.addEventListener("click", () => {
+                    modal.style.display = "none";
+                    document.body.style.overflow = "auto"; // 스크롤바 보이기
+                });   
+            }   
+        
         })
 
 // 운동 시간 데이터 일일히 입력하기 귀찮아서 for문으로 작성함.
@@ -243,7 +274,7 @@
             $minute = value_minute.options[value_minute.selectedIndex].value;
         }
 
-        const $button = document.querySelector('button');
+        const $form = document.querySelector('form');
         const $answer = document.querySelector('.textarea');
         const $answerExpand = document.querySelector('.ai-chat-expand');
 
@@ -259,18 +290,19 @@
         const url = "https://estsoft-openai-api.jejucodingcamp.workers.dev/"
         // chatGPT API를 url 변수에 할당
 
+
         let spinnerDupl = 0 // spinner 중복 방지를 위한 변수 설정
-        $button.addEventListener('click', e=>{
+        $form.addEventListener('submit', e=>{
             e.preventDefault() // 클릭했을 때 이벤트 발생 강제로 막기
-            const genderContent = `저의 성별은 ${$gender}입니다.`
-            const heightContent = `저의 키는 ${$height.value}cm 입니다.`
-            const weightContent = `저의 체중은 ${$weight.value}kg 입니다.`
-            const levelContent = `저의 벤치프레스, 스쿼트, 데드리프트의 합산 무게는 ${$level.value}kg 입니다.`
-            const objectContent = `저의 운동 목표는 ${$object}입니다.`
-            const timeContent = `저는 하루에 운동을 ${$hour}시간 ${$minute}분 할 수 있습니다.`
-            const requestContent = `월요일부터 일요일까지 요일별로 하루에 운동 5가지를 하는 것으로 추천해줘. JSON 형식으로 다른 설명은 생략, key값은 모두 영어로 해줘.`
+            const genderContent = `저의 성별은 ${$gender}입니다.`;
+            const heightContent = `저의 키는 ${$height.value}cm 입니다.`;
+            const weightContent = `저의 체중은 ${$weight.value}kg 입니다.`;
+            const levelContent = `저의 벤치프레스, 스쿼트, 데드리프트의 합산 무게는 ${$level.value}kg 입니다.`;
+            const objectContent = `저의 운동 목표는 ${$object}입니다.`;
+            const timeContent = `저는 하루에 운동을 ${$hour}시간 ${$minute}분 할 수 있습니다.`;
+            const requestContent = `월요일부터 일요일까지 요일별로 하루에 운동 5가지를 하는 것으로 추천해줘. JSON 형식으로 다른 설명은 생략, key값은 모두 영어로 해줘.`;
             const contentDataType = {"요일": [{ "exercise": "스쿼트", "sets": 3, "reps": 10 },{ "exercise": "벤치프레스", "sets": 3, "reps": 8 }]};
-            addUserInput()
+            addUserInput();
 
             data.push({
                 'role':'user',
@@ -279,7 +311,7 @@
             }) // data 라는 배열에 입력된 값들을 추가한다.
             
             if (spinnerDupl == 0) {
-                spinnerDupl+=1
+                spinnerDupl+=1;
                 const spinnerParent = document.querySelector('.textarea'); // textarea라는 클래스를 가진 객체를 spinnerParent변수에 할당
                 const spinnerWrapper = document.createElement('div');
                 const spinnerElement = document.createElement('div'); // div태그를 생성하는 요소를 spinnerElement 변수에 할당함
@@ -290,10 +322,9 @@
                 spinnerSelectWrapper.id = 'wrapper';
                 spinnerSelectElement.id = 'spinner';
 
-                chatGPTAPI()
-                
+                chatGPTAPI();
         }        
-    })  
+    }) 
 
         function chatGPTAPI() {
 
@@ -309,9 +340,9 @@
                 console.log(res);
                 // $answer.innerHTML = `<p>${res.choices[0].message.content}</p>`;
                 // $answerExpand.innerHTML = $answer.innerHTML;
-                const data = JSON.parse(res.choices[0].message.content)
-                console.log(data)
-                const strdata = JSON.stringify(data)
+                const data = JSON.parse(res.choices[0].message.content);
+                console.log(data);
+                const strdata = JSON.stringify(data);
                 localStorage.setItem('myData', data);
                 // ExercisePlan 클래스 정의
                 class ExercisePlan {
@@ -359,8 +390,11 @@
                             let exerciseName= plan.exercise;
                             let setsCount= plan.sets;
                             let repsCount=plan.reps;
-                            
-                            tableHTML += "<tr><td>" + day + "</td><td>" + exerciseName + "</td><td>" + setsCount + "</td><td>" + repsCount+ "</td></tr>";
+                            if(i % 5 == 0){
+                                tableHTML += "<tr><td rowspan = '5'>" + day + "</td><td>" + exerciseName + "</td><td>" + setsCount + "</td><td>" + repsCount+ "</td></tr>";
+                                } else {
+                                tableHTML += "<tr><td>" + exerciseName + "</td><td>" + setsCount + "</td><td>" + repsCount+ "</td></tr>";
+                            }
                         }
                     }
                 }
@@ -368,67 +402,38 @@
                 // 테이블 마무리 태그 추가
                 tableHTML += "</table>";
 
-                localexerciseplan.push(tableHTML)
-                localStorage.setItem("exercisePlan",JSON.stringify(localexerciseplan))
+                localexerciseplan.push(tableHTML);
+                localStorage.setItem("exercisePlan",JSON.stringify(localexerciseplan));
 
                 const selectExercisePlan = document.getElementById("tableContainer");
                 selectExercisePlan.innerHTML=tableHTML;
                 
             
             })
-            spinnerWrapper.remove()
+            spinnerWrapper.remove();
             
         }
 
+        
+        
         // 버튼 누르면 텍스트 박스 커지게
         const $expandPageBtn = document.querySelector('.expandpage');
         let changeSizenum = 0;
         $expandPageBtn.addEventListener('click',function(){
             $answer.style = 'height:40vh';
             $expandPageBtn.style.transform= 'rotatex(180deg)';
-            changeSizenum+=1 ;
             if (changeSizenum%2==1) {
-                $answer.style = 'height:195px';
+                $answer.style = 'none';
                 $expandPageBtn.style.transform= 'rotatex(0deg)';
             } 
+            changeSizenum+=1 ;
         })
-
-        // 두번째 페이지에 표 작성 
-        for (let i = 0; i < 23; i++) {
-            const genderValue = localgender[i] || ""; // 값이 없을 경우 공백으로 설정
-            const heightValue = localheight[i] || "";
-            const weightValue = localweight[i] || "";
-            const levelValue = locallevel[i] || "";
-            const objectValue = localobject[i] || "";
-            if (localexerciseplan[i]){
-            const createTable = `<tr><td>${i+1}</td><td id="table-gender${i}">${genderValue}</td><td id="table-height${i}">${heightValue}</td><td id="table-weight${i}">${weightValue}</td><td id="table-level${i}">${levelValue}</td><td id="table-object${i}">${objectValue}</td><td><button id="open-modal${i}">열기</button></td></tr>`;
-            const planTable = document.querySelector('.plan-table');
-            planTable.innerHTML += createTable;
-        } else {
-            const createTable = `<tr><td>${i+1}</td><td id="table-gender${i}">${genderValue}</td><td id="table-height${i}">${heightValue}</td><td id="table-weight${i}">${weightValue}</td><td id="table-level${i}">${levelValue}</td><td id="table-object${i}">${objectValue}</td><td></td></tr>`;
-            const planTable = document.querySelector('.plan-table');
-            planTable.innerHTML += createTable;
-        }
-    }
         
         const modal = document.getElementById("modal");
         const closeModalBtn = document.getElementById("close-modal");
         const createExerciseModal = document.getElementById("create-exercise-plan")
-        // 모달창 열기
-        for (let i = 0; i < 23; i++) {
-            let openModalBtn = document.getElementById(`open-modal${i}`);
-            openModalBtn.addEventListener("click", () => {
-                modal.style.display = "block";
-                document.body.style.overflow = "hidden"; // 스크롤바 제거
-                createExerciseModal.innerHTML = localexerciseplan[i]
-        // 모달창 닫기
-            closeModalBtn.addEventListener("click", () => {
-                modal.style.display = "none";
-                document.body.style.overflow = "auto"; // 스크롤바 보이기
-        });
-        });
-        }   
-        
+
+
         
 
     </script>
@@ -436,6 +441,7 @@
     <!-- 아이콘 출처 -->
     <footer>
         <a href="https://www.flaticon.com/free-icons/drop-down-list" title="drop down list icons">Drop down list icons created by Anas Mannaa - Flaticon</a>
+        <a href="https://www.flaticon.com/kr/free-icons/" title="닫기 아이콘">닫기 아이콘  제작자: Freepik - Flaticon</a>
     </footer>
     </body>
 </html>
