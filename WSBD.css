@@ -42,7 +42,7 @@
     flex-direction: column;
     margin: auto;
     align-items: center;
-    border: 1px solid black;
+    border: none;
     background-color: #e0e0e0;
     width: 550px;
     border-radius: 30px;
@@ -127,6 +127,7 @@ input::-webkit-inner-spin-button {
     font-size: 16px;
     font-weight: bold;
     border-radius: 10px;
+    border:none;
     display: flex;
     margin: auto;
     align-items: center;
@@ -146,18 +147,13 @@ input::-webkit-inner-spin-button {
     overflow-y:auto;
     border:1px solid white;
     border-radius: 15px;
-    /* margin-bottom: 20px; */
     background-color: white;
     transition: 1s;
     transform-origin: bottom;
     padding:10px
 }
 
-/* .textarea p {
-    padding:10px;
-    overflow-y: auto;
-} */
-
+/* 로딩 중 띄울 스피너 애니매이션 */
 #wrapper {
     width: inherit;
     height: inherit;
@@ -181,7 +177,7 @@ input::-webkit-inner-spin-button {
     animation: spin 2s linear infinite;
 }
 
-
+/* 페이지 전환 버튼 */
 .page-style {
     height: 100vh;
     background-color: #6e94b9;
@@ -200,29 +196,14 @@ input::-webkit-inner-spin-button {
     display: none;
 }
 
+/* 텍스트 에리어 확장 버튼 */
 .expandpage {
     cursor: pointer;
     text-align: center;
     transition: 1s;
 }
 
-table {
-width: 100%;
-border: 1px solid #444444;
-}
-th, td {
-border: 1px solid #444444;
-}
-td {
-    bottom: #eee;
-    text-align: center;
-}
-
-
-.plan-table tr {
-    height:20px;
-}
-
+/* 모달창 디자인 및 display 설정 */
 #modal {
     position: fixed;
     z-index: 1;
@@ -264,3 +245,39 @@ td {
     justify-content: space-between;
     align-items: flex-start;
 }
+
+
+/* 테이블 디자인 */
+#exercisePlan tr:nth-child(even),
+.plan-table tbody:nth-child(even) {
+    background-color: #f2f2f2;
+}
+#exercisePlan tr:nth-child(odd),
+.plan-table tbody:nth-child(odd) {
+    background-color: #d9d9d9;
+}
+#exercisePlan th,
+.plan-table th {
+    background-color: #558ed5;
+    color: white;
+}
+
+#exercisePlan,
+#exercisePlan td,
+#exercisePlan th,
+.plan-table,
+.plan-table td,
+.plan-table th {
+    border:none;
+    text-align: center;
+}
+
+.plan-table {
+    background: white;
+    color: #3f3f3f;
+    }
+
+#exercisePlan,
+.plan-table {
+    width: 100%;
+    }

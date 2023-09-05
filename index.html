@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>WSBD chat</title>
         <link rel="stylesheet" href="./WSBD.css">
-
     </head>
     <body class="WSBD-body">
 
@@ -25,9 +24,9 @@
                                 <div class="gender">
                                     <span>성별을 선택해주세요.</span>
                                     <div>
-                                        <input id="gender1" name="gender" type="radio" value="male" onclick='getGender(event)' checked="checked">
+                                        <input id="gender1" name="gender" type="radio" value="남성" onclick='getGender(event)' checked="checked">
                                         <label for="gender1">남성</label>
-                                        <input id="gender2" name="gender" type="radio" value="female" onclick='getGender(event)'>
+                                        <input id="gender2" name="gender" type="radio" value="여성" onclick='getGender(event)'>
                                         <label for="gender2">여성</label>
                                     </div>
                                 </div>
@@ -81,12 +80,10 @@
                                     <span>하루에 운동할 수 있는 시간이 어느정도인가요?</span>
                                     <div>
                                         <select id="work-out-hour" onchange="ChangeHour()">
-                                            <option></option>
                                         </select>
                                         <label for="work-out-hour">시간</label>
 
                                         <select id="work-out-minute" onchange="ChangeMinute()">
-                                            <option></option>
                                         </select>
                                         <label for="work-out-minute">분</label>
                                     </div>
@@ -167,6 +164,7 @@
         const $prevBtn = document.querySelector('.prev-btn');
         const $nextBtn = document.querySelector('.next-btn');
         
+        // 페이지 전환(이전) 버튼
         $prevBtn.addEventListener('click', function() {
             $container.style.transform = 'translateX(0vw)';
             $prevBtn.style.display = "none";
@@ -178,6 +176,7 @@
             $planStorage.innerHTML += firstTable
         })
 
+        // 페이지 전환(다음) 버튼
         let clickBtn = 0
         $nextBtn.addEventListener('click', function() {
             $container.style.transform = 'translateX(-100vw)';
@@ -203,24 +202,26 @@
                     planTable.innerHTML += createTable;
                 }
             }     
+
             // 모달창 열기
             for (let i = 0; i < 23; i++) {
                 let openModalBtn = document.getElementById(`open-modal${i}`);
                 openModalBtn.addEventListener("click", () => {
                     modal.style.display = "block";
-                    document.body.style.overflow = "hidden"; // 스크롤바 제거
+                    document.body.style.overflow = "hidden";
                     createExerciseModal.innerHTML = localexerciseplan[i]
                 });
+
             // 모달창 닫기
                 closeModalBtn.addEventListener("click", () => {
                     modal.style.display = "none";
-                    document.body.style.overflow = "auto"; // 스크롤바 보이기
+                    document.body.style.overflow = "auto";
                 });   
             }   
         
         })
 
-// 운동 시간 데이터 일일히 입력하기 귀찮아서 for문으로 작성함.
+        // 운동 시간 데이터 입력
         for (hours=0;hours<11;hours+=1) {
             const hourParent = document.querySelector('#work-out-hour');
             const createHourOption = document.createElement('option');
@@ -236,7 +237,7 @@
             createMinute.text = minutes;
         }
 
-// 성별이 선택됨에 따라 그 값을 $gender에 할당한다. event.target은 이벤트가 발생한 대상을 뜻한다.
+        // 성별이 선택됨에 따라 그 값을 $gender에 할당한다. event.target은 이벤트가 발생한 대상을 뜻한다.
         let $gender = '';
 
         window.onload = function() {
@@ -279,18 +280,16 @@
         const $answerExpand = document.querySelector('.ai-chat-expand');
 
         
+        // data라는 배열에 역할 부여하는 객체를 추가한다.
         const data = []
         data.push({
             'role':'system',
             'content':'assistant는 웨이트 트레이닝, 바디빌딩의 전문가 입니다.'
         })
-        // data라는 배열에 역할 부여하는 객체를 추가한다.
 
-
-        const url = "https://estsoft-openai-api.jejucodingcamp.workers.dev/"
         // chatGPT API를 url 변수에 할당
-
-
+        const url = "https://estsoft-openai-api.jejucodingcamp.workers.dev/"
+        
         let spinnerDupl = 0 // spinner 중복 방지를 위한 변수 설정
         $form.addEventListener('submit', e=>{
             e.preventDefault() // 클릭했을 때 이벤트 발생 강제로 막기
@@ -302,13 +301,14 @@
             const timeContent = `저는 하루에 운동을 ${$hour}시간 ${$minute}분 할 수 있습니다.`;
             const requestContent = `월요일부터 일요일까지 요일별로 하루에 운동 5가지를 하는 것으로 추천해줘. JSON 형식으로 다른 설명은 생략, key값은 모두 영어로 해줘.`;
             const contentDataType = {"요일": [{ "exercise": "스쿼트", "sets": 3, "reps": 10 },{ "exercise": "벤치프레스", "sets": 3, "reps": 8 }]};
+
             addUserInput();
 
             data.push({
                 'role':'user',
                 'content' : genderContent+heightContent+weightContent+levelContent+objectContent+timeContent+requestContent+JSON.stringify(contentDataType)
 
-            }) // data 라는 배열에 입력된 값들을 추가한다.
+            })
             
             if (spinnerDupl == 0) {
                 spinnerDupl+=1;
@@ -338,8 +338,6 @@
             .then(res => res.json())
             .then(res => {
                 console.log(res);
-                // $answer.innerHTML = `<p>${res.choices[0].message.content}</p>`;
-                // $answerExpand.innerHTML = $answer.innerHTML;
                 const data = JSON.parse(res.choices[0].message.content);
                 console.log(data);
                 const strdata = JSON.stringify(data);
@@ -392,8 +390,8 @@
                             let repsCount=plan.reps;
                             if(i % 5 == 0){
                                 tableHTML += "<tr><td rowspan = '5'>" + day + "</td><td>" + exerciseName + "</td><td>" + setsCount + "</td><td>" + repsCount+ "</td></tr>";
-                                } else {
-                                tableHTML += "<tr><td>" + exerciseName + "</td><td>" + setsCount + "</td><td>" + repsCount+ "</td></tr>";
+                            } else {
+                            tableHTML += "<tr><td>" + exerciseName + "</td><td>" + setsCount + "</td><td>" + repsCount+ "</td></tr>";
                             }
                         }
                     }
@@ -413,9 +411,7 @@
             spinnerWrapper.remove();
             
         }
-
-        
-        
+    
         // 버튼 누르면 텍스트 박스 커지게
         const $expandPageBtn = document.querySelector('.expandpage');
         let changeSizenum = 0;
@@ -432,9 +428,6 @@
         const modal = document.getElementById("modal");
         const closeModalBtn = document.getElementById("close-modal");
         const createExerciseModal = document.getElementById("create-exercise-plan")
-
-
-        
 
     </script>
 
