@@ -154,6 +154,19 @@ for (let day in exercisePlans) {
 - 일단 기능구현을 목표로 두고 두번째 방식으로 작성하였습니다.
 - 개선할 방식은 데이터를 받아 테이블을 만드는 함수를 만들어서 반복문에서 사용하면 더 깔끔해질 것 같습니다.
 
+```
+if (localexerciseplan[i]){
+        const createTable = `<tr id="table-element"><td>${i+1}</td><td id="table-gender${i}">${genderValue}</td><td id="table-height${i}">${heightValue}</td><td id="table-weight${i}">${weightValue}</td><td id="table-level${i}">${levelValue}</td><td id="table-object${i}">${objectValue}</td><td><button id="open-modal${i}">열기</button></td></tr>`;
+        const planTable = document.querySelector('.plan-table');
+        planTable.innerHTML += createTable;
+        } else {
+            const createTable = `<tr id="table-element"><td>${i+1}</td><td id="table-gender${i}">${genderValue}</td><td id="table-height${i}">${heightValue}</td><td id="table-weight${i}">${weightValue}</td><td id="table-level${i}">${levelValue}</td><td id="table-object${i}">${objectValue}</td><td></td></tr>`;
+            const planTable = document.querySelector('.plan-table');
+            planTable.innerHTML += createTable;
+        }
+    }     
+```
+
 ### 3. 로컬저장소 저장 및 업데이트
 - 로컬저장소에 저장은 되는데 업데이트를 하려고 보니, 로컬저장소는 덮어쓰기만 된다라는 것을 깨닫고 어떻게 하지 고민을 하게 되었다. 고민을 하던 중 로컬저장소 값을 불러와서 변수에 저장하고, 변수에 값을 추가해서 다시 로컬저장소로 저장하면 되지 않을까? 라는 결론에 이르렀다.
 ```
