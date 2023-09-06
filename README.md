@@ -1,4 +1,8 @@
-# WSBDchat
+<img width="527" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/dde3819b-a73f-44f2-af4d-c6d15f1e50ba">
+
+
+
+# 오늘 운동 뭐하지?
 ESTsoft 오르미 3기 첫번째 프로젝트
 
 
@@ -9,6 +13,7 @@ ESTsoft 오르미 3기 첫번째 프로젝트
 ### 1-2 기능
 - 사용자들의 성별, 키, 체중, 운동능력, 운동시간 같은 정보를 기반으로 운동 계획표 작성
 - 추후 다시 계획표 확인 가능한 저장소 및 모달창 구현
+<img width="795" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/8a563cd4-4ba6-4ab8-9716-496df5db7bad">
 
 ## 2. 개발 환경
 ### 2-1 개발 환경
@@ -17,9 +22,10 @@ ESTsoft 오르미 3기 첫번째 프로젝트
 ### 2-2 배포 URL
 - https://alexmint001.github.io/WSBDchat/
 
+
 ## 3. 프로젝트 구조와 개발 일정
 ### 3-1 프로젝트 구조
-<img width="795" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/8a563cd4-4ba6-4ab8-9716-496df5db7bad">
+
 
 ### 3-2 개발 일정
 
@@ -64,56 +70,60 @@ https://ovenapp.io/view/eQtb6yvmgYVt2tghNHczgSHTH5xVbsbE/tUQl4
  
 - 발표
 
+
 ### 4. UI
 - 메인페이지
-<img width="450" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/ed3b63fa-2183-4458-8c51-0404f2a442c3">
+![1  main](https://github.com/Alexmint001/WSBDchat/assets/142385654/217aabbc-1196-4715-9070-27e4ef513326)
 
 각 입력창, radio 버튼 및 select option 값을 선택한 후 운동계획생성 버튼을 구현하였다.
 
-<img width="450" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/0265b206-fb47-4b0e-a528-db0a59b6d371">
+![2  emptyinput](https://github.com/Alexmint001/WSBDchat/assets/142385654/d2d6f858-f6c6-4e9c-b37a-2007fbd9e67a)
 
 만약 input 창에 아무 값도 입력하지 않았을 경우에는 데이터를 요청하지 못하도록 required 속성을 사용하였다.
 
-<img width="450" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/da60879b-1bcd-4586-81f2-510d797d242e">
+![3  input](https://github.com/Alexmint001/WSBDchat/assets/142385654/f3534f78-e6f7-4352-9c74-99483f5a3485)
 
 각 input 창에 값을 입력해주고 운동 계획 생성 버튼을 누르면 
 
-<img width="450" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/ddc3826a-a6be-4114-9802-12c0e143982e">
+![4  generateplan](https://github.com/Alexmint001/WSBDchat/assets/142385654/3a6ab13a-be11-4545-bb99-888895e2b811)
 
 데이터를 요청하고 다시 받을 때 까지 spinner가 돌아가도록 HTML 및 CSS 작성하였다.
 
-<img width="450" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/86b05889-efe2-47eb-8756-d6f132257495">
+![5  writeplantable](https://github.com/Alexmint001/WSBDchat/assets/142385654/3c99646d-3c80-430f-8959-c75aa431ac98)
 
 데이터를 정상적으로 받은 모습이다.
 
-<img width="450" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/5c0a6eb5-d456-461f-bc30-469a745eea90">
+![6  expandtable](https://github.com/Alexmint001/WSBDchat/assets/142385654/cb91ec93-921f-48b9-8578-95b105b01574)
 
 밑의 확장 버튼을 누르면 textarea가 커지는 모습을 확인할 수 있다.
 그리고 밑의 next 버튼을 누르면
 
-<img width="450" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/f81a640d-6701-4315-a1a8-d3e4ce2dc1e4">
+![7  secondtable](https://github.com/Alexmint001/WSBDchat/assets/142385654/95dc4fc0-aac3-41e2-847e-94b2cdfd1eb1)
 
 입력한 사용자의 정보와 작성된 운동 계획표를 볼 수 있도록 만든 "열기" 버튼을 확인할 수 있으며,
 열기 버튼을 누를 경우
 
-<img width="450" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/cc31ccef-fe62-476a-a16e-30e9d72ed107">
+![8  modal](https://github.com/Alexmint001/WSBDchat/assets/142385654/2e2b39b9-b750-4e31-9cec-8aa938a892e8)
 
 이와 같은 모습으로 모달창에 저장한 계획표를 출력한다.
 
-![WSBD](https://github.com/Alexmint001/WSBDchat/assets/142385654/66ec5701-2436-4c43-a36a-0bc8904a9119)
+![오늘운동뭐하지](https://github.com/Alexmint001/WSBDchat/assets/142385654/f874a3d0-afbf-4dcb-a250-da9a877e2c6f)
+
 
 ### 5. 메인 기능 
 - 사용자들의 성별, 키, 체중, 운동능력, 운동시간 같은 데이터를 chatGPT API로 전달하고, 원하는 데이터를 요청.
 - 원하는 데이터 접수 후 운동 계획 데이터를 표로 작성
 - 운동 계획표 작성 시 매 요일 마다 5가지 운동을 추천해준다.
 
+
 ### 6. 추가 기능
 
 - 작성한 운동 데이터를 로컬저장소에 저장하고, 다시 불러와서 모달창에 작성.
 
+
 ### 7. 개발하며 느낀점
 - 혼자서 직접 만들어보는 첫 프로젝트이다 보니 걱정도 많이 되고, 모르는 것도 많았지만 하나하나 공부해가면서 만드는 과정과 내가 머릿속으로 생각했던 기능들이 점점 구현이 되어가는 모습을 보는 것이 재밌었다.
-- 그리고 기능구현이 안되더라도 왜 안되지? 하면서 고민하다가 해결이 되면 기분이 되게 좋다는 것을 느꼈다. 
+- 그리고 기능구현이 안되더라도 왜 안되지? 하면서 고민하다가 해결이 되면 기분이 되게 좋다는 것을 느꼈다.
 
 
 
