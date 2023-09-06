@@ -12,7 +12,7 @@
     background-color:#e0e0e0;
     text-decoration: none;
     color:black;
-    font-family: 'Nanum Pen Script', cursive;
+    font-family: 'Dongle', sans-serif;
 }
 
 .WSBD-header img {
@@ -21,7 +21,7 @@
 
 .container * {
     font-size: 20px;
-    font-family: 'Nanum Pen Script', cursive;
+    font-family: 'Dongle', sans-serif;
 }
 
 .container {
@@ -48,6 +48,11 @@
     width: 550px;
     border-radius: 30px;
     margin-top: 20px;
+}
+
+.WSBD-chat h2 {
+    font-size: 32px;
+    margin:auto
 }
 
 
@@ -86,7 +91,7 @@ input::-webkit-inner-spin-button {
 
 /* 3대 운동 설명 문장을 p태그로 묶음 */
 .physical-input p {
-    font-size: 16px;
+    font-size: 20px;
     margin:8px 0px 0px 0px;
     color:grey
 }
@@ -205,7 +210,7 @@ input::-webkit-inner-spin-button {
 }
 
 .page-button * {
-    padding : 6px;
+    /* padding : 6px; */
     width: 40px;
     height: 30px;
     margin-top: 5px;
@@ -216,20 +221,20 @@ input::-webkit-inner-spin-button {
     height:40px;
     font-size: 24px;
     display: none;
-    font-family: 'Nanum Pen Script', cursive;
+    font-family: 'Dongle', sans-serif;
 }
 
 .next-btn {
     width:60px;
     height:40px;
     font-size: 24px;
-    font-family: 'Nanum Pen Script', cursive;
+    font-family: 'Dongle', sans-serif;
 }
 
 /* 모달창 디자인 및 display 설정 */
 #modal {
-    font-family: 'Nanum Pen Script', cursive;
-    font-size: 20px;
+    font-family: 'Dongle', sans-serif;
+    font-size: 24px;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -246,7 +251,7 @@ input::-webkit-inner-spin-button {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 40%;
     }
 
 #close-modal {

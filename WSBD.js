@@ -160,8 +160,8 @@ $form.addEventListener('submit', e=>{
         
         submitDataToGPT()
         createSpinner();
-        chatGPTAPI().then(()=>{spinnerDupl=0});
-
+        chatGPTAPI();
+        spinnerDupl=0;
     } else {
         alert("운동계획을 생성중입니다!")
     }        
@@ -292,7 +292,7 @@ function chatGPTAPI() {
 const $expandPageBtn = document.querySelector('.expandpage');
 let changeSizenum = 0;
 $expandPageBtn.addEventListener('click',function(){
-    $answer.style = 'height:40vh';
+    $answer.style = 'height:30vh';
     $expandPageBtn.style.transform= 'rotatex(180deg)';
     if (changeSizenum%2==1) {
         $answer.style = 'none';
