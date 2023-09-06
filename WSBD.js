@@ -151,10 +151,7 @@ data.push({
 // chatGPT API를 url 변수에 할당
 const url = "https://estsoft-openai-api.jejucodingcamp.workers.dev/"
 
-
-
 // 운동계획 생성버튼
-try {
 let spinnerDupl = 0 // spinner 중복 방지를 위한 변수 설정
 $form.addEventListener('submit', e=>{
     e.preventDefault() // 클릭했을 때 이벤트 발생 강제로 막기
@@ -163,20 +160,13 @@ $form.addEventListener('submit', e=>{
         
         submitDataToGPT()
         createSpinner();
-        chatGPTAPI();
-    } else {
-        spinnerDupl = 0;
-        const removePlan = document.querySelector("#exercisePlan")
-        removePlan.remove()
+        chatGPTAPI().then(()=>{spinnerDupl=0});
 
-        submitDataToGPT()
-        createSpinner();
-        chatGPTAPI();
+    } else {
+        alert("운동계획을 생성중입니다!")
     }        
 }) 
-} catch(error) {
-    console.log('JSON형식 오류',error.message);
-}
+
 
 // chatGPT한테 요청할 데이터 및 전송할 데이터 함수
 function submitDataToGPT() {
@@ -294,7 +284,7 @@ function chatGPTAPI() {
         
     
     })
-    spinnerWrapper.remove();
+
     
 }
 
