@@ -116,6 +116,10 @@ C:.
 ![오늘운동뭐하지11](https://github.com/Alexmint001/WSBDchat/assets/142385654/af00b936-f163-4ec0-9583-575eec698572)
 
 
+https://github.com/Alexmint001/WSBDchat/assets/142385654/d1ef27be-b521-4f97-83bc-9303bdccaf59
+
+
+
 ## 6. 개발 이슈 사항
 ### 1. 프롬프트 엔지니어링
 - chatGPT로부터 지정한 key값의 올바른 JSON 데이터를 접수 받기 위해서 고민을 많이 했으며, 성공확률이 많이 올라간 방법으로 현재 적용하였으며, 그 방법은 chatGPT에게 요청할 때 원하는 형식을 정확하게 전달하는 것이었다.
