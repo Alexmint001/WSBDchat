@@ -1,4 +1,6 @@
-[ESTsoft 오르미 3기 첫번째 프로젝트] - 오늘 운동 뭐하지?" 통해서 계획을 짜고 "오운완"하는 사람이 많아지면 좋겠다.
+[ESTsoft 오르미 3기 첫번째 프로젝트] 
+
+※ 오늘 운동 뭐하지?" 통해서 계획을 짜고 "오운완"하는 사람이 많아지면 좋겠다.
 
 
 <p align="center"><img width="200" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/e3fbad0b-9fe6-49f3-aad1-bb9145e023ce"></p>
