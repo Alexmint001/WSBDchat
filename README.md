@@ -20,7 +20,9 @@
 ### 1-2 기능
 - 사용자들의 성별, 키, 체중, 운동능력, 운동시간 같은 정보를 기반으로 운동 계획표 작성
 - 추후 다시 계획표 확인 가능한 저장소 및 모달창 구현
-<p align="center"><img width="795" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/8a563cd4-4ba6-4ab8-9716-496df5db7bad"></p>
+
+<p align="center"><img width="1000" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/5b088cb6-f320-4871-86cb-3d65c3262aa0"></p>
+
 
 ## 2. 개발 환경
 ### 2-1 개발 환경
@@ -93,21 +95,50 @@ C:.
 
 ## 5. UI
 
-<p align="center"><img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/5aa1d2f7-2e7b-4f8b-a281-b24916ea3746"></p>
+<p align="center"><img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/b83d834f-2652-4676-8420-14778a50e2b3"></p>
 
 메인페이지
 
-<p align="center"><img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/807ea5f4-88a7-40e4-9af8-520c47cdd6b7"></p>
+```
+동일한 key값을 가진 JSON데이터를 받기 위해 넘겨준 데이터
+const contentDataType = {"요일": [{ "exercise": "스쿼트", "sets": 3, "reps": 10 },{ "exercise": "벤치프레스", "sets": 3, "reps": 8 }]};
+```
+
+
+<p align="center"><img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/6cdbbc6e-bbab-4714-a2d8-b4c810946637"></p>
 
 운동계획표 작성 완료
 
-<p align="center"><img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/a2b9b120-a33c-49ea-9b39-691c9a5c91ee"></p>
+<img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/b65cd808-66c6-46af-abb1-ba225a3f1037">
+
+
+```
+
+for (let day in exercisePlans) {
+            if (exercisePlans.hasOwnProperty(day)) {
+                let plans = exercisePlans[day];
+                
+                for (let i = 0; i < plans.length; i++) {
+                    let plan= plans[i];
+                    
+                    let exerciseName= plan.exercise;
+                    let setsCount= plan.sets;
+                    let repsCount=plan.reps;
+                    if(i % 5 == 0){
+                        tableHTML += "<tr><td rowspan = '5'>" + day + "</td><td>" + exerciseName + "</td><td>" + setsCount + "</td><td>" + repsCount+ "</td></tr>";
+                    } else {
+                    tableHTML += "<tr><td>" + exerciseName + "</td><td>" + setsCount + "</td><td>" + repsCount+ "</td></tr>";
+                    }
+                }
+            }
+        }
+```
+
+<p align="center"><img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/57490235-1b5c-4574-b05c-70ef519e5f8e"></p>
 
 로컬저장소 데이터 이용하여 모달창에 운동계획표 출력
 
-![오늘운동뭐하지-찐2](https://github.com/Alexmint001/WSBDchat/assets/142385654/5d684767-2c4a-4522-9de8-46266193e28d)
-
-https://github.com/Alexmint001/WSBDchat/assets/142385654/db795359-9a9a-462b-ae4f-41ca7f2b6cab
+<p align="center"><img width="700" alt="gif" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/5d684767-2c4a-4522-9de8-46266193e28d"></p>
 
 ## 6. 개발 이슈 사항
 ### 1. 프롬프트 엔지니어링
