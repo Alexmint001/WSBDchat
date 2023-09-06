@@ -3,12 +3,21 @@
 
 
 # 오늘 운동 뭐하지?
-ESTsoft 오르미 3기 첫번째 프로젝트
+[ESTsoft 오르미 3기 첫번째 프로젝트]
 
+"오늘 운동 뭐하지?" 는 운동을 하려고 마음 먹은 사람들이 계획을 어떻게 짜야할지 모르거나, 계획하기가 귀찮을 때 간편하게 사용하여 계획표를 만들 수 있도록 개발한 서비스입니다. 
+
+## 목차
+   1. 목표와 기능
+   2. 개발환경
+   3. 프로젝트 구조 및 개발 일정
+   4. UI
+   5. 메인 기능
+   6. 개발하면서 느낀점
 
 ## 1. 목표와 기능
 ### 1.1 목표
-- 운동 계획표를 손쉽게 작성 가능한 사이트
+- 운동 계획표를 손쉽게 작성 가능한 사이트를 개발해보자!
 
 ### 1-2 기능
 - 사용자들의 성별, 키, 체중, 운동능력, 운동시간 같은 정보를 기반으로 운동 계획표 작성
@@ -25,7 +34,26 @@ ESTsoft 오르미 3기 첫번째 프로젝트
 
 ## 3. 프로젝트 구조와 개발 일정
 ### 3-1 프로젝트 구조
-
+```
+C:.
+│  ESTsoft 1차 프로젝트 일정표.pdf
+│  index.html
+│  README.md
+│  WSBD.css
+│  WSBD.js
+│
+├─.vscode
+│      settings.json
+│
+└─img
+        20kg_plate_character-1-removebg-preview.png
+        20kg_plate_character-1.jpg
+        20kg_plate_character-2-removebg-preview.png
+        20kg_plate_character-2.jpg
+        close.png
+        expand.png
+        WSBD.gif
+```
 
 ### 3-2 개발 일정
 
@@ -57,73 +85,56 @@ https://ovenapp.io/view/eQtb6yvmgYVt2tghNHczgSHTH5xVbsbE/tUQl4
 
 <img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/f9e79e08-fab4-4a9b-a5d2-8cab8bd26eeb">
 
-      - 이후에 목업 페이지 작성하여 좀 더 확실한 틀을 잡았다.
-
-- 1차 구현 [23.08.31 ~ 23.09.04]
-   - HTML
-   - CSS
-   - JavaScript
-
-- 최종 수정 [23.09.05 ~ 23.09.06]
-   - 과제 제출 [23.09.06 자정까지]
-   - 발표자료 작성 README
- 
-- 발표
-
 
 ### 4. UI
+
+<img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/217aabbc-1196-4715-9070-27e4ef513326">
+
 - 메인페이지
-![1  main](https://github.com/Alexmint001/WSBDchat/assets/142385654/217aabbc-1196-4715-9070-27e4ef513326)
 
-각 입력창, radio 버튼 및 select option 값을 선택한 후 운동계획생성 버튼을 구현하였다.
-
-![2  emptyinput](https://github.com/Alexmint001/WSBDchat/assets/142385654/d2d6f858-f6c6-4e9c-b37a-2007fbd9e67a)
+<img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/d2d6f858-f6c6-4e9c-b37a-2007fbd9e67a">
 
 만약 input 창에 아무 값도 입력하지 않았을 경우에는 데이터를 요청하지 못하도록 required 속성을 사용하였다.
 
-![3  input](https://github.com/Alexmint001/WSBDchat/assets/142385654/f3534f78-e6f7-4352-9c74-99483f5a3485)
+<img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/f3534f78-e6f7-4352-9c74-99483f5a3485">
 
-각 input 창에 값을 입력해주고 운동 계획 생성 버튼을 누르면 
+각 input 창에 값을 입력해주고 운동 계획 생성 버튼 클릭.
 
-![4  generateplan](https://github.com/Alexmint001/WSBDchat/assets/142385654/3a6ab13a-be11-4545-bb99-888895e2b811)
+<img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/3a6ab13a-be11-4545-bb99-888895e2b811">
 
 데이터를 요청하고 다시 받을 때 까지 spinner가 돌아가도록 HTML 및 CSS 작성하였다.
 
-![5  writeplantable](https://github.com/Alexmint001/WSBDchat/assets/142385654/3c99646d-3c80-430f-8959-c75aa431ac98)
+<img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/3c99646d-3c80-430f-8959-c75aa431ac98">
 
-데이터를 정상적으로 받은 모습이다.
+데이터를 정상적으로 받은 모습.
 
-![6  expandtable](https://github.com/Alexmint001/WSBDchat/assets/142385654/cb91ec93-921f-48b9-8578-95b105b01574)
+<img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/cb91ec93-921f-48b9-8578-95b105b01574">
 
 밑의 확장 버튼을 누르면 textarea가 커지는 모습을 확인할 수 있다.
 그리고 밑의 next 버튼을 누르면
 
-![7  secondtable](https://github.com/Alexmint001/WSBDchat/assets/142385654/95dc4fc0-aac3-41e2-847e-94b2cdfd1eb1)
+<img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/95dc4fc0-aac3-41e2-847e-94b2cdfd1eb1">
 
-입력한 사용자의 정보와 작성된 운동 계획표를 볼 수 있도록 만든 "열기" 버튼을 확인할 수 있으며,
-열기 버튼을 누를 경우
+입력한 사용자의 정보와 작성된 운동 계획표를 볼 수 있도록 만든 "열기" 버튼을 확인할 수 있으며, 열기 버튼을 누를 경우
 
-![8  modal](https://github.com/Alexmint001/WSBDchat/assets/142385654/2e2b39b9-b750-4e31-9cec-8aa938a892e8)
+<img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/2e2b39b9-b750-4e31-9cec-8aa938a892e8">
 
 이와 같은 모습으로 모달창에 저장한 계획표를 출력한다.
 
-![오늘운동뭐하지](https://github.com/Alexmint001/WSBDchat/assets/142385654/f874a3d0-afbf-4dcb-a250-da9a877e2c6f)
+<img width="1000" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/f874a3d0-afbf-4dcb-a250-da9a877e2c6f">
 
 
 ### 5. 메인 기능 
-- 사용자들의 성별, 키, 체중, 운동능력, 운동시간 같은 데이터를 chatGPT API로 전달하고, 원하는 데이터를 요청.
+- 사용자들의 성별, 키, 체중, 운동능력, 운동시간 같은 데이터를 chatGPT로 전달하고, 원하는 데이터를 요청.
 - 원하는 데이터 접수 후 운동 계획 데이터를 표로 작성
-- 운동 계획표 작성 시 매 요일 마다 5가지 운동을 추천해준다.
-
-
-### 6. 추가 기능
-
+- 운동 계획표 작성 시 요일 마다 5가지 운동을 추천해준다.
 - 작성한 운동 데이터를 로컬저장소에 저장하고, 다시 불러와서 모달창에 작성.
 
 
-### 7. 개발하며 느낀점
-- 혼자서 직접 만들어보는 첫 프로젝트이다 보니 걱정도 많이 되고, 모르는 것도 많았지만 하나하나 공부해가면서 만드는 과정과 내가 머릿속으로 생각했던 기능들이 점점 구현이 되어가는 모습을 보는 것이 재밌었다.
-- 그리고 기능구현이 안되더라도 왜 안되지? 하면서 고민하다가 해결이 되면 기분이 되게 좋다는 것을 느꼈다.
+### 6. 개발하며 느낀점
+- 혼자서 직접 만들어보는 첫 프로젝트이다 보니 걱정도 많이 되고, 모르는 것도 많았지만 하나하나 공부해가면서 만드는 과정과 내가 머릿속으로 생각했던 기능들이 점점 구현이 되어가는 모습을 보는 것이 재밌었습니다.
+- 그리고 기능구현이 안되더라도 왜 안되지? 하면서 고민하다가 해결이 되면 기분이 되게 좋았습니다.
+- 내가 그동안 써왔었던 모든 것들이 이러한 과정이 거친 것이라는걸 알고나니 모든 것들을 다 어떻게 구현한 걸까? 라는 의문이 생겼습니다.
 
 
 
