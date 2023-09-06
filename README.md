@@ -11,8 +11,8 @@
    1. 목표와 기능
    2. 개발환경
    3. 프로젝트 구조 및 개발 일정
-   4. UI
-   5. 메인 기능
+   4. 메인 기능
+   5. UI
    6. 개발하면서 느낀점
 
 ## 1. 목표와 기능
@@ -86,7 +86,14 @@ https://ovenapp.io/view/eQtb6yvmgYVt2tghNHczgSHTH5xVbsbE/tUQl4
 <img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/f9e79e08-fab4-4a9b-a5d2-8cab8bd26eeb">
 
 
-### 4. UI
+### 4. 메인 기능 
+- 사용자들의 성별, 키, 체중, 운동능력, 운동시간 같은 데이터를 chatGPT로 전달하고, 원하는 데이터를 요청.
+- 원하는 데이터 접수 후 운동 계획 데이터를 표로 작성
+- 운동 계획표 작성 시 요일 마다 5가지 운동을 추천해준다.
+- 작성한 운동 데이터를 로컬저장소에 저장하고, 다시 불러와서 모달창에 작성.
+
+
+### 5. UI
 
 <img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/217aabbc-1196-4715-9070-27e4ef513326">
 
@@ -122,13 +129,6 @@ https://ovenapp.io/view/eQtb6yvmgYVt2tghNHczgSHTH5xVbsbE/tUQl4
 이와 같은 모습으로 모달창에 저장한 계획표를 출력한다.
 
 <img width="1000" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/f874a3d0-afbf-4dcb-a250-da9a877e2c6f">
-
-
-### 5. 메인 기능 
-- 사용자들의 성별, 키, 체중, 운동능력, 운동시간 같은 데이터를 chatGPT로 전달하고, 원하는 데이터를 요청.
-- 원하는 데이터 접수 후 운동 계획 데이터를 표로 작성
-- 운동 계획표 작성 시 요일 마다 5가지 운동을 추천해준다.
-- 작성한 운동 데이터를 로컬저장소에 저장하고, 다시 불러와서 모달창에 작성.
 
 
 ### 6. 개발하며 느낀점
