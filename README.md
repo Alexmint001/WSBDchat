@@ -100,7 +100,7 @@ https://ovenapp.io/view/eQtb6yvmgYVt2tghNHczgSHTH5xVbsbE/tUQl4
 
 이와 같은 모습으로 모달창에 저장한 계획표를 출력한다.
 
-![WSBD](https://github.com/Alexmint001/WSBDchat/assets/142385654/ab00480f-20d2-45bf-89ff-9d587e6254e3)
+![WSBD](https://github.com/Alexmint001/WSBDchat/assets/142385654/66ec5701-2436-4c43-a36a-0bc8904a9119)
 
 ### 5. 메인 기능 
 - 사용자들의 성별, 키, 체중, 운동능력, 운동시간 같은 데이터를 chatGPT API로 전달하고, 원하는 데이터를 요청.
@@ -108,6 +108,7 @@ https://ovenapp.io/view/eQtb6yvmgYVt2tghNHczgSHTH5xVbsbE/tUQl4
 - 운동 계획표 작성 시 매 요일 마다 5가지 운동을 추천해준다.
 
 ### 6. 추가 기능
+
 - 작성한 운동 데이터를 로컬저장소에 저장하고, 다시 불러와서 모달창에 작성.
 
 ### 7. 개발하며 느낀점
