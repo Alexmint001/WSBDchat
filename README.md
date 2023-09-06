@@ -1,7 +1,7 @@
 [ESTsoft 오르미 3기 첫번째 프로젝트]
 
 
-<img width="200" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/e3fbad0b-9fe6-49f3-aad1-bb9145e023ce">
+<p align="center"><img width="200" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/e3fbad0b-9fe6-49f3-aad1-bb9145e023ce"></p>
 
 # 오늘 운동 뭐하지?
 
@@ -20,7 +20,7 @@
 ### 1-2 기능
 - 사용자들의 성별, 키, 체중, 운동능력, 운동시간 같은 정보를 기반으로 운동 계획표 작성
 - 추후 다시 계획표 확인 가능한 저장소 및 모달창 구현
-<img width="795" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/8a563cd4-4ba6-4ab8-9716-496df5db7bad">
+<p align="center"><img width="795" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/8a563cd4-4ba6-4ab8-9716-496df5db7bad"></p>
 
 ## 2. 개발 환경
 ### 2-1 개발 환경
@@ -55,7 +55,7 @@ C:.
 
 ### 3-2 개발 일정
 
-<img width="450" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/e90da3fe-bdd3-4038-91b4-766fd03ee090">
+<p align="center"><img width="450" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/e90da3fe-bdd3-4038-91b4-766fd03ee090"></p>
 
 - 기획 [23.08.29 ~ 23.08.30]
 
@@ -63,13 +63,13 @@ C:.
 
    - 초기 디자인:
 
-<img width="300" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/14d3ba00-e9b1-4036-a996-a0b18073e636">
+<p align="center"><img width="300" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/14d3ba00-e9b1-4036-a996-a0b18073e636"></p>
 
    - 2차 디자인:
 
-<img width="300" height="400" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/9ef30602-31a8-4e8e-8b2c-0c36a760512a">
+<p align="center"><img width="300" height="400" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/9ef30602-31a8-4e8e-8b2c-0c36a760512a"></p>
 
-<img width="300" height="400" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/a12c5774-ee9d-4e25-98ae-355f9a0367eb">
+<p align="center"><img width="300" height="400" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/a12c5774-ee9d-4e25-98ae-355f9a0367eb"></p>
 
    - 처음에는 목업 페이지 작성이라는 개념을 몰랐어서 손으로 디자인하였다.
 
@@ -77,11 +77,11 @@ C:.
 
 [ https://ovenapp.io/view/eQtb6yvmgYVt2tghNHczgSHTH5xVbsbE/tUQl4 ]
 
-<img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/fe6b9197-e8f7-4c1f-b268-2d0cc515caaf">
+<p align="center"><img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/fe6b9197-e8f7-4c1f-b268-2d0cc515caaf"></p>
 
-<img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/c79bea03-68fd-494a-9dcf-11d2d8fc56b6">
+<p align="center"><img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/c79bea03-68fd-494a-9dcf-11d2d8fc56b6"></p>
 
-<img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/f9e79e08-fab4-4a9b-a5d2-8cab8bd26eeb">
+<p align="center"><img width="500" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/f9e79e08-fab4-4a9b-a5d2-8cab8bd26eeb"></p>
 
 
 ## 4. 메인 기능 
@@ -93,22 +93,21 @@ C:.
 
 ## 5. UI
 
-<img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/5aa1d2f7-2e7b-4f8b-a281-b24916ea3746">
+<p align="center"><img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/5aa1d2f7-2e7b-4f8b-a281-b24916ea3746"></p>
 
 메인페이지
 
-<img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/807ea5f4-88a7-40e4-9af8-520c47cdd6b7">
+<p align="center"><img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/807ea5f4-88a7-40e4-9af8-520c47cdd6b7"></p>
 
 운동계획표 작성 완료
 
-<img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/a2b9b120-a33c-49ea-9b39-691c9a5c91ee">
+<p align="center"><img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/a2b9b120-a33c-49ea-9b39-691c9a5c91ee"></p>
 
 로컬저장소 데이터 이용하여 모달창에 운동계획표 출력
 
-![오늘운동뭐하지-찐](https://github.com/Alexmint001/WSBDchat/assets/142385654/d1bfcb0c-c37e-40ea-8529-abab41a828d6)
+![오늘운동뭐하지-찐2](https://github.com/Alexmint001/WSBDchat/assets/142385654/5d684767-2c4a-4522-9de8-46266193e28d)
 
-https://github.com/Alexmint001/WSBDchat/assets/142385654/d93d0b89-9626-4b0b-b32b-2df9b0ca4a62
-
+https://github.com/Alexmint001/WSBDchat/assets/142385654/db795359-9a9a-462b-ae4f-41ca7f2b6cab
 
 ## 6. 개발 이슈 사항
 ### 1. 프롬프트 엔지니어링
