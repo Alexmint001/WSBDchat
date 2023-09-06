@@ -93,31 +93,21 @@ C:.
 
 ## 5. UI
 
-<img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/217aabbc-1196-4715-9070-27e4ef513326">
+<img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/5aa1d2f7-2e7b-4f8b-a281-b24916ea3746">
 
 메인페이지
 
-1. input 창에 아무 값도 입력하지 않았을 경우에는 데이터를 요청하지 못하도록 required 속성을 사용하였다.
+<img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/807ea5f4-88a7-40e4-9af8-520c47cdd6b7">
 
-2. input 창에 값을 입력해주고 운동 계획 생성 버튼 클릭.
+운동계획표 작성 완료
 
-3. 데이터를 요청하고 다시 받을 때 까지 spinner가 돌아가도록 HTML 및 CSS 작성하였다.
+<img width="700" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/a2b9b120-a33c-49ea-9b39-691c9a5c91ee">
 
-4. 데이터를 정상적으로 받을 경우 textarea에 테이블 작성.
+로컬저장소 데이터 이용하여 모달창에 운동계획표 출력
 
-5. 확장 " ^ " 버튼을 누르면 textarea가 커지는 모습을 확인할 수 있다.
+![오늘운동뭐하지-찐](https://github.com/Alexmint001/WSBDchat/assets/142385654/d1bfcb0c-c37e-40ea-8529-abab41a828d6)
 
-6. "다음" 버튼을 누르면 다음 페이지로 넘어간다.
-
-7. 입력한 사용자의 정보와 작성된 운동 계획표를 볼 수 있도록 만든 "열기" 버튼을 확인할 수 있다.
-   
-8. 열기 버튼을 누를 경우 모달창에 저장한 계획표를 출력한다.
-
-![오늘운동뭐하지11](https://github.com/Alexmint001/WSBDchat/assets/142385654/af00b936-f163-4ec0-9583-575eec698572)
-
-
-https://github.com/Alexmint001/WSBDchat/assets/142385654/d1ef27be-b521-4f97-83bc-9303bdccaf59
-
+https://github.com/Alexmint001/WSBDchat/assets/142385654/d93d0b89-9626-4b0b-b32b-2df9b0ca4a62
 
 
 ## 6. 개발 이슈 사항
