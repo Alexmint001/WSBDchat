@@ -59,7 +59,7 @@ C:.
 
 ### 3-2 개발 일정
 
-<p align="center"><img width="450" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/e90da3fe-bdd3-4038-91b4-766fd03ee090"></p>
+<p align="center"><img width="1000" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/e90da3fe-bdd3-4038-91b4-766fd03ee090"></p>
 
 - 기획 [23.08.29 ~ 23.08.30]
 
