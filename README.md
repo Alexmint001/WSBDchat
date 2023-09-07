@@ -64,20 +64,21 @@ C:.
 - 기획 [23.08.29 ~ 23.08.30]
 
    - 과제 주제: 자신의 운동 수준과 목적, 하루에 운동할 수 있는 시간을 입력하면 운동 계획을 작성해주는 챗봇
+  
 
-   - 초기 디자인:
+- 초기 디자인:
 
 <p align="center"><img width="300" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/14d3ba00-e9b1-4036-a996-a0b18073e636"></p>
 
-   - 2차 디자인:
+- 2차 디자인:
 
 <p align="center"><img width="300" height="400" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/9ef30602-31a8-4e8e-8b2c-0c36a760512a"></p>
 
 <p align="center"><img width="300" height="400" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/a12c5774-ee9d-4e25-98ae-355f9a0367eb"></p>
 
-   - 처음에는 목업 페이지 작성이라는 개념을 몰랐어서 손으로 디자인하였다.
+- 처음에는 목업 페이지 작성이라는 개념을 몰랐어서 손으로 디자인하였다.
 
-   - 목업 페이지 작성:
+- 목업 페이지 작성:
 
 [ https://ovenapp.io/view/eQtb6yvmgYVt2tghNHczgSHTH5xVbsbE/tUQl4 ]
 
