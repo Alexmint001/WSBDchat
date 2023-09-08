@@ -25,7 +25,9 @@
 - 사용자들의 성별, 키, 체중, 운동능력, 운동시간 같은 정보를 기반으로 운동 계획표 작성
 - 추후 다시 계획표 확인 가능한 저장소 및 모달창 구현
 
-<p align="center"><img width="1000" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/5b088cb6-f320-4871-86cb-3d65c3262aa0"></p>
+
+- https://mm.tt/app/map/2935821703?t=MiK9WOJnc1
+<p align="center"><img width="1000" alt="image" src="https://github.com/Alexmint001/WSBDchat/assets/142385654/b4283834-6ab9-452f-9192-2e53e5c2a4bd"></p>
 
 
 ## 3. 개발 환경
