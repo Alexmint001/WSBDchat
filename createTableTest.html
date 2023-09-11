@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>table test</title>
+        <style>
+            table,
+            tr,
+            td {
+                border: 2px solid #aaa
+            }
+        </style>
+    </head>
+    <body>
+    
+        <div id="table1">테이블 만들기 테스트</div>
+        <script>
+            const create1 = document.createElement('table')
+            const create2 = document.createElement('tr')
+            const create3 = document.createElement('td')
+
+            const target1 = document.getElementById('table1')
+
+            const create11 = target1.appendChild(create1)
+            create11.id = 'tableId'
+
+            const target2 = document.getElementById('tableId')
+            
+            const create22 = target2.appendChild(create2)
+            create22.id = 'trId'
+
+            const target3 = document.getElementById('trId')
+
+
+            
+
+            for (let i = 0; i < 3; i++) {
+                let create33 = target3.appendChild(create3)
+                create33.className = 'tdId'
+            }
+
+        </script>
+    </body>
+</html>

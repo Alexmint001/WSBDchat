@@ -292,7 +292,7 @@ function chatGPTAPI() {
 const $expandPageBtn = document.querySelector('.expandpage');
 let changeSizenum = 0;
 $expandPageBtn.addEventListener('click',function(){
-    $answer.style = 'height:30vh';
+    $answer.style = 'height:500px';
     $expandPageBtn.style.transform= 'rotatex(180deg)';
     if (changeSizenum%2==1) {
         $answer.style = 'none';

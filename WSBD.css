@@ -1,5 +1,6 @@
+
 .WSBD-body {
-    overflow: hidden;
+    overflow-x: hidden;
     margin:0;
 }
 
@@ -45,7 +46,7 @@
     align-items: center;
     border: none;
     background-color: #e0e0e0;
-    width: 550px;
+    width: 33%;
     border-radius: 30px;
     margin-top: 20px;
 }
@@ -74,7 +75,6 @@
     display: flex;
     justify-content: flex-end;
     gap:10px
-    
 }
 
 /* input type = number의 숫자 증감 버튼 삭제 */
@@ -105,7 +105,7 @@ input::-webkit-inner-spin-button {
 }
 
 .physical-input input {
-    width: 120px;
+    width: 100%;
 }
 
 .workout-time label {
@@ -113,14 +113,14 @@ input::-webkit-inner-spin-button {
 }
 
 .workout-time select {
-    width:50px;
+    width:50%;
 }
 
 .generate-plan {
     background-color: rgb(85, 120, 223);
     color: white;
-    width:300px;
-    height:50px;
+    width:50%;
+    height:100%;
     font-size: 24px;
     font-weight: bold;
     border-radius: 10px;
@@ -145,15 +145,16 @@ input::-webkit-inner-spin-button {
 }
 
 .textarea {
-    width: 500px;
-    height: 195px;
+    width: 32rem;
+    height: 10rem;
     overflow-y:auto;
     border:1px solid white;
     border-radius: 15px;
     background-color: white;
     transition: 1s;
     transform-origin: bottom;
-    padding:10px
+    padding:10px;
+    position:relative;
 }
 
 /* 텍스트 에리어 확장 버튼 */
@@ -166,7 +167,7 @@ input::-webkit-inner-spin-button {
 /* 두번째 페이지 디자인 */
 .plan-storage {
     font-size: 16px;
-    width: 550px;
+    width: 33%;
     background-color: white ;
     border-radius: 30px;
     margin-top: 20px; 
@@ -203,7 +204,7 @@ input::-webkit-inner-spin-button {
 
 /* 페이지 전환 버튼 */
 .page-style {
-    height: 100vh;
+    /* height: 100vh; */
     background-color: #6e94b9;
     display: flex;
     justify-content: center;
@@ -211,22 +212,22 @@ input::-webkit-inner-spin-button {
 
 .page-button * {
     /* padding : 6px; */
-    width: 40px;
-    height: 30px;
+    width: 40%;
+    height: 30%;
     margin-top: 5px;
 }
 
 .prev-btn {
-    width:60px;
-    height:40px;
+    width:120%;
+    height:80%;
     font-size: 24px;
     display: none;
     font-family: 'Dongle', sans-serif;
 }
 
 .next-btn {
-    width:60px;
-    height:40px;
+    width:120%;
+    height:80%;
     font-size: 24px;
     font-family: 'Dongle', sans-serif;
 }
@@ -311,3 +312,320 @@ input::-webkit-inner-spin-button {
 .plan-table {
     width: 100%;
     }
+
+
+
+@media (max-width: 768px) {
+    .WSBD-body {
+        overflow-x: hidden;
+        margin:0;
+    }
+    
+    .WSBD-header {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:10px;
+        background-color:#e0e0e0;
+        text-decoration: none;
+        color:black;
+        font-family: 'Dongle', sans-serif;
+    }
+    
+    .WSBD-header img {
+        width: 100px;
+    }
+    
+    .container * {
+        font-size: 20px;
+        font-family: 'Dongle', sans-serif;
+    }
+    
+    .container {
+        display: flex;
+        width:200vw;
+        background-color: #6e94b9;
+        /* transition: transform 0.5s; */
+    }
+    
+    .WSBD-main {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width:100vw;
+    }
+    
+    .WSBD-chat {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+        border: none;
+        background-color: #e0e0e0;
+        width: 33%;
+        border-radius: 30px;
+        margin-top: 20px;
+    }
+    
+    .WSBD-chat h2 {
+        font-size: 32px;
+        margin:auto
+    }
+    
+    
+    .user-physical {
+        width: 450px
+    }
+    
+    .physical-input,
+    .workout-time,
+    .workout-obj,
+    .gender {
+        display: flex;
+        justify-content: space-between;
+        margin:10px;
+        flex-wrap: wrap;
+    }
+    
+    .physical-input div {
+        display: flex;
+        justify-content: flex-end;
+        gap:10px
+    }
+    
+    /* input type = number의 숫자 증감 버튼 삭제 */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    /* 각 단위를 span 태그로 묶음 */
+    .physical-input span {
+        width:20px
+    }
+    
+    /* 3대 운동 설명 문장을 p태그로 묶음 */
+    .physical-input p {
+        font-size: 20px;
+        margin:8px 0px 0px 0px;
+        color:grey
+    }
+    
+    .gender,
+    .physical-input input,
+    .workout-time select,
+    .workout-obj select {
+        border:0;
+        border-radius: 5px;
+    }
+    
+    .physical-input input {
+        width: 100%;
+    }
+    
+    .workout-time label {
+        text-align: center;
+    }
+    
+    .workout-time select {
+        width:50%;
+    }
+    
+    .generate-plan {
+        background-color: rgb(85, 120, 223);
+        color: white;
+        width:50%;
+        height:100%;
+        font-size: 24px;
+        font-weight: bold;
+        border-radius: 10px;
+        border:none;
+        display: flex;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        margin-top:20px
+    }
+    
+    .generate-plan:hover {
+        cursor: pointer;
+        background-color: #6e94b9;
+        transition: background-color 0.3s ease
+    }
+    
+    /* GPT한테서 받은 데이터 출력 */
+    .ai-chat p {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+    
+    .textarea {
+        width: 32rem;
+        height: 10rem;
+        overflow-y:auto;
+        border:1px solid white;
+        border-radius: 15px;
+        background-color: white;
+        transition: 1s;
+        transform-origin: bottom;
+        padding:10px;
+        position:relative;
+    }
+    
+    /* 텍스트 에리어 확장 버튼 */
+    .expandpage {
+        cursor: pointer;
+        text-align: center;
+        transition: 1s;
+    }
+    
+    /* 두번째 페이지 디자인 */
+    .plan-storage {
+        font-size: 16px;
+        width: 33%;
+        background-color: white ;
+        border-radius: 30px;
+        margin-top: 20px; 
+        padding: 16px;
+    }
+    
+    .plan-storage button {
+        font-size: 16px;
+    }
+    
+    /* 로딩 중 띄울 스피너 애니매이션 */
+    #wrapper {
+        width: inherit;
+        height: inherit;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg);}
+    }
+    
+    #spinner {
+        margin: auto;
+        width: 10px;
+        height: 10px;
+        border: 10px solid rgba(163,151,198,0.2);
+        border-top: 10px solid rgb(85,120,223);
+        border-radius: 50%;
+        animation: spin 2s linear infinite;
+    }
+    
+    /* 페이지 전환 버튼 */
+    .page-style {
+        /* height: 100vh; */
+        background-color: #6e94b9;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .page-button * {
+        /* padding : 6px; */
+        width: 40%;
+        height: 30%;
+        margin-top: 5px;
+    }
+    
+    .prev-btn {
+        width:120%;
+        height:80%;
+        font-size: 24px;
+        display: none;
+        font-family: 'Dongle', sans-serif;
+    }
+    
+    .next-btn {
+        width:120%;
+        height:80%;
+        font-size: 24px;
+        font-family: 'Dongle', sans-serif;
+    }
+    
+    /* 모달창 디자인 및 display 설정 */
+    #modal {
+        font-family: 'Dongle', sans-serif;
+        font-size: 24px;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: none;
+        }
+    
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 40%;
+        }
+    
+    #close-modal {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        }
+    
+    #close-modal:hover,
+    #close-modal:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        opacity: 50%;
+        transition: 0.5s;
+        }
+    
+    .modal-header {
+        display:flex ;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    
+    /* 테이블 디자인 */
+    #exercisePlan tr:nth-child(even),
+    .plan-table tbody:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    #exercisePlan tr:nth-child(odd),
+    .plan-table tbody:nth-child(odd) {
+        background-color: #d9d9d9;
+    }
+    #exercisePlan th,
+    .plan-table th {
+        background-color: #558ed5;
+        color: white;
+    }
+    
+    #exercisePlan,
+    #exercisePlan td,
+    #exercisePlan th,
+    .plan-table,
+    .plan-table td,
+    .plan-table th {
+        border:none;
+        text-align: center;
+    }
+    
+    .plan-table {
+        background: white;
+        color: #3f3f3f;
+        }
+    
+    #exercisePlan,
+    .plan-table {
+        width: 100%;
+        }}
