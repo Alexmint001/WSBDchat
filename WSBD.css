@@ -363,19 +363,19 @@ input::-webkit-inner-spin-button {
         align-items: center;
         border: none;
         background-color: #e0e0e0;
-        width: 33%;
+        width: 90%;
         border-radius: 30px;
         margin-top: 20px;
     }
     
     .WSBD-chat h2 {
-        font-size: 32px;
+        font-size: 24px;
         margin:auto
     }
     
     
     .user-physical {
-        width: 450px
+        width: 95%
     }
     
     .physical-input,
@@ -422,7 +422,7 @@ input::-webkit-inner-spin-button {
     }
     
     .physical-input input {
-        width: 100%;
+        width: 90%;
     }
     
     .workout-time label {
@@ -430,7 +430,7 @@ input::-webkit-inner-spin-button {
     }
     
     .workout-time select {
-        width:50%;
+        width:30%;
     }
     
     .generate-plan {
@@ -462,8 +462,8 @@ input::-webkit-inner-spin-button {
     }
     
     .textarea {
-        width: 32rem;
-        height: 10rem;
+        width: 75vw;
+        height: 10vh;
         overflow-y:auto;
         border:1px solid white;
         border-radius: 15px;
@@ -483,16 +483,16 @@ input::-webkit-inner-spin-button {
     
     /* 두번째 페이지 디자인 */
     .plan-storage {
-        font-size: 16px;
-        width: 33%;
+        font-size: 12px;
+        width: 90%;
         background-color: white ;
         border-radius: 30px;
         margin-top: 20px; 
-        padding: 16px;
+        padding: 10px;
     }
     
     .plan-storage button {
-        font-size: 16px;
+        font-size: 12px;
     }
     
     /* 로딩 중 띄울 스피너 애니매이션 */
